@@ -2,6 +2,16 @@
 - Swift 2.1
 - Xcode 7.3
 
+## PROJECT 2 - Tap Or Hold Counter
+##### 2016-03-27
+
+![gif](gifs/2-tap-or-hold-counter.gif)
+
+What I Learned:
+
+- Hot to use UILongGestureRecognizer in RxSwift
+
+
 
 ## PROJECT 1 - Tap Counter
 ##### 2016-03-27

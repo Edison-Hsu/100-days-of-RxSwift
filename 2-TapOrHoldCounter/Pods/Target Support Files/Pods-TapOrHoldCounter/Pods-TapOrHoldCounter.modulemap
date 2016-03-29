@@ -1,0 +1,6 @@
+framework module Pods_TapOrHoldCounter {
+  umbrella header "Pods-TapOrHoldCounter-umbrella.h"
+
+  export *
+  module * { export * }
+}

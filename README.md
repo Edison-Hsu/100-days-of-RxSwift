@@ -3,7 +3,7 @@
 - Xcode 7.3
 
 ## PROJECT 2 - Tap Or Hold Counter
-##### 2016-03-27
+##### 2016-03-30
 
 ![gif](gifs/2-tap-or-hold-counter.gif)
 

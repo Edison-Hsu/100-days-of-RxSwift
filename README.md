@@ -1,4 +1,6 @@
 # 100 Days and 40 Projects of RxSwift
+Similar with [samvlu](http://samvlu.com/index.html), but refactor by RxSwift.
+
 - Swift 2.1
 - Xcode 7.3
 - iOS 9.3

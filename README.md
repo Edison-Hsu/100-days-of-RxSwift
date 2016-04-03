@@ -6,6 +6,16 @@ Similar with [samvlu](http://samvlu.com/index.html), but refactor by RxSwift.
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 4 - Tip Calculator
+##### 2016-04-03
+
+![gif](gifs/4-tip-calculator.gif)
+
+What I Learned:
+
+- How to use UISlider in RxSwift
+- Create a toolbar above the keyboard
+
 ## PROJECT 3 - Swift iAd
 ##### 2016-04-02
 

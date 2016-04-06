@@ -6,6 +6,17 @@ Similar with [samvlu](http://samvlu.com/index.html), but refactor by RxSwift.
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 5 - BASIC TABLE VIEW
+##### 2016-04-06
+
+![gif](gifs/5-BasicTableView.png)
+
+What I Learned:
+
+- Build Custom Table View Controller
+- Work with Nav Bar Buttons
+- Populate Table Rows with local data
+
 ## PROJECT 4 - Tip Calculator
 ##### 2016-04-03
 

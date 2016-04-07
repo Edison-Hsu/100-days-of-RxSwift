@@ -1,0 +1,6 @@
+framework module Pods_6_GettingCurrentDateAndTime {
+  umbrella header "Pods-6-GettingCurrentDateAndTime-umbrella.h"
+
+  export *
+  module * { export * }
+}

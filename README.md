@@ -6,6 +6,17 @@ Similar with [samvlu](http://samvlu.com/index.html), but refactor by RxSwift.
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 6 - GETTING CURRENT DATE AND TIME
+##### 2016-04-08
+
+![gif](gifs/6-GettingCurrentDateAndTime.gif)
+
+What I Learned:
+
+- How to work with RxSwift#BindTo
+- Hot to use NSDateFormatter with build in dateStyle and timeStyle
+
+
 ## PROJECT 5 - BASIC TABLE VIEW
 ##### 2016-04-06
 

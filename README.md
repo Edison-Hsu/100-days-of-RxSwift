@@ -6,6 +6,15 @@ Similar with [samvlu](http://samvlu.com/index.html), but refactor by RxSwift.
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 7 - PASSING DATA TO ANOTHER VIEW
+##### 2016-04-09
+
+![gif](gifs/7-PassingDataToAnotherView.gif)
+
+What I Learned:
+
+- How to send data through segue
+
 ## PROJECT 6 - GETTING CURRENT DATE AND TIME
 ##### 2016-04-08
 

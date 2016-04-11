@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jmh-qN-7Vf">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--SwipeDownToDissmissKeyboard-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwipeToDismissKeyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ObM-xq-ahq">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ObM-xq-ahq" secondAttribute="trailing" constant="-20" id="41X-Bz-xd5"/>
+                            <constraint firstItem="ObM-xq-ahq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="5Qw-h4-hYP"/>
+                            <constraint firstItem="ObM-xq-ahq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="7I1-XU-88V"/>
+                            <constraint firstItem="ObM-xq-ahq" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="BW6-UW-bZn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ObM-xq-ahq" secondAttribute="bottom" id="M6v-DF-hgm"/>
+                            <constraint firstItem="ObM-xq-ahq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Php-EP-TRA"/>
+                            <constraint firstItem="ObM-xq-ahq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="PtY-OO-5nS"/>
+                            <constraint firstItem="ObM-xq-ahq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="TZY-0b-BX1"/>
+                            <constraint firstItem="ObM-xq-ahq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Zkl-Jl-Lxj"/>
+                            <constraint firstItem="ObM-xq-ahq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="db0-05-7vj"/>
+                            <constraint firstItem="ObM-xq-ahq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="k7L-Jv-Ux5"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ObM-xq-ahq" secondAttribute="leading" id="nCe-rB-aRm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ObM-xq-ahq" secondAttribute="trailing" constant="-20" id="rZq-a3-Ymp"/>
+                            <constraint firstItem="ObM-xq-ahq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xMK-o7-ohx"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="41X-Bz-xd5"/>
+                                <exclude reference="5Qw-h4-hYP"/>
+                                <exclude reference="7I1-XU-88V"/>
+                                <exclude reference="BW6-UW-bZn"/>
+                                <exclude reference="Php-EP-TRA"/>
+                                <exclude reference="TZY-0b-BX1"/>
+                                <exclude reference="Zkl-Jl-Lxj"/>
+                                <exclude reference="db0-05-7vj"/>
+                                <exclude reference="nCe-rB-aRm"/>
+                                <exclude reference="xMK-o7-ohx"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="SwipeDownToDissmissKeyboard" id="Usj-Ze-CS1"/>
+                    <connections>
+                        <outlet property="textView" destination="ObM-xq-ahq" id="EST-OS-X6N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0Ow-43-n0u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jmh-qN-7Vf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G6X-wo-Qxb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="60i-w1-R42"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMr-R0-KV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="440" y="429"/>
+        </scene>
+    </scenes>
+</document>

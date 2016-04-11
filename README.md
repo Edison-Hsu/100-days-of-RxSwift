@@ -6,6 +6,16 @@ Similar with [samvlu](http://samvlu.com/index.html), but refactor by RxSwift.
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 8 - SWIPE DOWN TO DISMISS KEYBOARD
+##### 2016-04-11
+
+![gif](gifs/8-SwipeDownToDismissKeyboard.gif)
+
+What I Learned:
+
+- How to use UISwipeGestureRecognizer in RxSwift
+- Auto-launch the Keyboard when the View loads
+
 ## PROJECT 7 - PASSING DATA TO ANOTHER VIEW
 ##### 2016-04-09
 

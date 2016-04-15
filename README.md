@@ -6,6 +6,16 @@ Similar with [samvlu](http://samvlu.com/index.html), but refactor by RxSwift.
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 9 - ADD PHOTO FROM CAMERA ROLL
+##### 2016-04-16
+
+![gif](gifs/9-AddPhotoFromCameraRoll.gif)
+
+What I Learned:
+
+- How to use UIImagePickerController in RxSwift
+- Control how the image is displayed to prevent stretching
+
 ## PROJECT 8 - SWIPE DOWN TO DISMISS KEYBOARD
 ##### 2016-04-11
 

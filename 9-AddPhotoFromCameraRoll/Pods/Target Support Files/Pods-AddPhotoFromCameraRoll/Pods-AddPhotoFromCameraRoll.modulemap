@@ -1,0 +1,6 @@
+framework module Pods_AddPhotoFromCameraRoll {
+  umbrella header "Pods-AddPhotoFromCameraRoll-umbrella.h"
+
+  export *
+  module * { export * }
+}

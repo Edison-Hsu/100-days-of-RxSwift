@@ -6,6 +6,16 @@ Similar with [samvlu](http://samvlu.com/index.html), but refactor by RxSwift.
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 10 - PULL TO REFRESH TABLE VIEW
+##### 2016-04-16
+![gif](gifs/10-PullToRefreshTableView.gif)
+
+What I Learned:
+
+- How to use TableView binding in RxSwift
+- Learn what is Variable in RxSwift
+- Hot to refresh data in RxSwift
+
 ## PROJECT 9 - ADD PHOTO FROM CAMERA ROLL
 ##### 2016-04-16
 

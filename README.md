@@ -1,5 +1,5 @@
 # 100 Days and 40 Projects of RxSwift
-Similar with [samvlu](http://samvlu.com/index.html), but refactor by RxSwift.
+Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but refactor by RxSwift.
 
 - Swift 2.1
 - Xcode 7.3

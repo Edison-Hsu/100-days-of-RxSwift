@@ -6,6 +6,16 @@ Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but ref
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 11 - DELETING AND REARRANGING
+##### 2016-04-28
+![gif](gifs/11-DeletingAndRearranging.gif)
+
+What I Learned:
+
+- How to use rx_itemMoved in RxSwift
+- How to use rx_itemDeleted in RxSwift
+- Learn what is editButtonItem in UITableView
+
 ## PROJECT 10 - PULL TO REFRESH TABLE VIEW
 ##### 2016-04-16
 ![gif](gifs/10-PullToRefreshTableView.gif)

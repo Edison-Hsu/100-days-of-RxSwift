@@ -6,6 +6,16 @@ Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but ref
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 12 - ADD NEW ITEM
+##### 2016-04-30
+![gif](gifs/12-AddNewItem.gif)
+
+What I Learned:
+
+- How to show keyboard when view appear
+- How to pass data back to view controller
+
+
 ## PROJECT 11 - DELETING AND REARRANGING
 ##### 2016-04-28
 ![gif](gifs/11-DeletingAndRearranging.gif)

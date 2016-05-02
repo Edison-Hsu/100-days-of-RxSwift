@@ -6,6 +6,16 @@ Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but ref
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 13 - STICKY SECTION HEADERS
+##### 2016-05-02
+![gif](gifs/13-StickySectionHeaders.gif)
+
+What I Learned:
+
+- How to build sticky section tableview
+- How to use RxTableViewSectionedReloadDataSource in RxSwift
+
+
 ## PROJECT 12 - ADD NEW ITEM
 ##### 2016-04-30
 ![gif](gifs/12-AddNewItem.gif)

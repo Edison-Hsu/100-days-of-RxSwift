@@ -1,10 +1,19 @@
 # 100 Days and 40 Projects of RxSwift
- Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but refactor by RxSwift.
+Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but refactor by RxSwift.
 
 - Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)
 - Xcode 7.3
 - iOS 9.3
 - Simulator iPhone 6s 
+
+## PROJECT 14 - JUMPBAR
+##### 2016-05-07
+![gif](gifs/14-Jumpbar.gif)
+
+What I Learned:
+
+- How to config dataSource in RxSwift
+- Learn Create an Indexed Table View 
 
 ## PROJECT 13 - STICKY SECTION HEADERS
 ##### 2016-05-02

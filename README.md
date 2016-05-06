@@ -1,5 +1,5 @@
 # 100 Days and 40 Projects of RxSwift
-Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but refactor by RxSwift.
+ Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but refactor by RxSwift.
 
 - Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)
 - Xcode 7.3

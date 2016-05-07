@@ -6,6 +6,16 @@ Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but ref
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 15 - FROM SKETCH TO XCODE
+##### 2016-05-07
+![gif](gifs/15-FromSketchToXcode.png)
+
+What I Learned:
+
+- How to use Sketch
+
+Sketch is a very awesome design tool. I just use few time to finish the task and it's very easy to export assets.
+
 ## PROJECT 14 - JUMPBAR
 ##### 2016-05-07
 ![gif](gifs/14-Jumpbar.gif)

@@ -6,6 +6,15 @@ Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but ref
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 16 - BUILDING THE USER INTERFACE
+##### 2016-05-08
+![gif](gifs/16-BuildingTheUserInterface.png)
+
+What I Learned:
+
+- Use Navigation, Table View and View Controllers
+- Use Auto Layout for creating Universal Apps
+
 ## PROJECT 15 - FROM SKETCH TO XCODE
 ##### 2016-05-07
 ![gif](gifs/15-FromSketchToXcode.png)

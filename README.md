@@ -6,9 +6,34 @@ Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but ref
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 18 - DYNAMIC DATA FOR EACH CELL
+##### 2016-05-08
+![gif](gifs/18-DynamicDataForEachCell.gif)
+
+##### Part 4 of Contacts App for iOS
+
+What I Learned:
+
+- Load data with RxSwift
+- Push ViewController with rx_selected
+- How to show multiline in UILable
+
+## PROJECT 17 - THE MODEL AND CONTROLLERS
+##### 2016-05-08
+![gif](gifs/17-TheModelAndControllers.png)
+
+##### Part 3 of Contacts App for iOS
+
+What I Learned:
+
+- Store and access data in Json File
+- Create Section Headers and Rows in Tables
+
 ## PROJECT 16 - BUILDING THE USER INTERFACE
 ##### 2016-05-08
 ![gif](gifs/16-BuildingTheUserInterface.png)
+
+##### Part 2 of Contacts App for iOS
 
 What I Learned:
 
@@ -18,6 +43,8 @@ What I Learned:
 ## PROJECT 15 - FROM SKETCH TO XCODE
 ##### 2016-05-07
 ![gif](gifs/15-FromSketchToXcode.png)
+
+##### Part 1 of Contacts App for iOS
 
 What I Learned:
 

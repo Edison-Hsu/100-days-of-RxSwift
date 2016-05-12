@@ -7,7 +7,7 @@ Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but ref
 - Simulator iPhone 6s 
 
 ## PROJECT 18 - DYNAMIC DATA FOR EACH CELL
-##### 2016-05-08
+##### 2016-05-13
 ![gif](gifs/18-DynamicDataForEachCell.gif)
 
 ##### Part 4 of Contacts App for iOS
@@ -19,7 +19,7 @@ What I Learned:
 - How to show multiline in UILable
 
 ## PROJECT 17 - THE MODEL AND CONTROLLERS
-##### 2016-05-08
+##### 2016-05-13
 ![gif](gifs/17-TheModelAndControllers.png)
 
 ##### Part 3 of Contacts App for iOS

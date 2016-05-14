@@ -15,6 +15,8 @@ What I Learned:
 - Create an Accessory Input View
 - Use icons for UIButtons
 
+Tools: Sketch, Xcode, Vim
+
 ## PROJECT 18 - DYNAMIC DATA FOR EACH CELL
 ##### 2016-05-13
 ![gif](gifs/18-DynamicDataForEachCell.gif)
@@ -27,6 +29,8 @@ What I Learned:
 - Push ViewController with rx_selected
 - How to show multiline in UILable
 
+Tools: Sketch, Xcode, Vim
+
 ## PROJECT 17 - THE MODEL AND CONTROLLERS
 ##### 2016-05-13
 ![gif](gifs/17-TheModelAndControllers.png)
@@ -37,6 +41,8 @@ What I Learned:
 
 - Store and access data in Json File
 - Create Section Headers and Rows in Tables
+
+Tools: Sketch, Xcode, Vim
 
 ## PROJECT 16 - BUILDING THE USER INTERFACE
 ##### 2016-05-08
@@ -49,6 +55,8 @@ What I Learned:
 - Use Navigation, Table View and View Controllers
 - Use Auto Layout for creating Universal Apps
 
+Tools: Sketch, Xcode, Vim
+
 ## PROJECT 15 - FROM SKETCH TO XCODE
 ##### 2016-05-07
 ![gif](gifs/15-FromSketchToXcode.png)
@@ -58,6 +66,8 @@ What I Learned:
 What I Learned:
 
 - How to use Sketch
+
+Tools: Sketch, Xcode, Vim
 
 Sketch is a very awesome design tool. I just use few time to finish the task and it's very easy to export assets.
 

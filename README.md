@@ -6,6 +6,15 @@ Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but ref
 - iOS 9.3
 - Simulator iPhone 6s 
 
+## PROJECT 19 - BUTTONS ABOVE KEYBOARD
+##### 2016-05-14
+![gif](gifs/19-ButtonsAboveKeyboard.gif)
+
+What I Learned:
+
+- Create an Accessory Input View
+- Use icons for UIButtons
+
 ## PROJECT 18 - DYNAMIC DATA FOR EACH CELL
 ##### 2016-05-13
 ![gif](gifs/18-DynamicDataForEachCell.gif)

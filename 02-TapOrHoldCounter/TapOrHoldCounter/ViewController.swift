@@ -14,29 +14,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var tapButton: UIButton!
     @IBOutlet weak var resetButton: UIBarButtonItem!
     @IBOutlet weak var numberLabel: UILabel!
-    private let disposeBag = DisposeBag()
+    fileprivate let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let longPressGesture = UILongPressGestureRecognizer()
-        longPressGesture.rx_event
-            .subscribeNext { [weak self] _ in
+        longPressGesture.rx.event
+            .subscribe(onNext: { [weak self] _ in
                 let number = Int((self?.numberLabel.text)!)
                 self?.numberLabel.text = String(number!+1)
-            }.addDisposableTo(disposeBag)
+            }).addDisposableTo(disposeBag)
         self.tapButton.addGestureRecognizer(longPressGesture)
         
-        tapButton.rx_tap
-            .subscribeNext { [weak self] x in
+        tapButton.rx.tap
+            .subscribe(onNext: { [weak self] x in
                 let number = Int((self?.numberLabel.text)!)
                 self?.numberLabel.text = String(number!+1)
-            }.addDisposableTo(disposeBag)
+            }).addDisposableTo(disposeBag)
         
-        resetButton.rx_tap
-            .subscribeNext { [weak self] in
+        resetButton.rx.tap
+            .subscribe(onNext: { [weak self] in
                 self?.numberLabel.text = "0"
-            }.addDisposableTo(disposeBag)
+            }).addDisposableTo(disposeBag)
         
     }
 

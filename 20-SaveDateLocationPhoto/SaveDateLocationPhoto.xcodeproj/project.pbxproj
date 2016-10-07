@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C8EF36A352A25546C41878D /* Pods_SaveDateLocationPhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545FC3FD5144AF9182384944 /* Pods_SaveDateLocationPhoto.framework */; };
+		F513ADAF1DA81C9C005879A0 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513ADAD1DA81C9C005879A0 /* AddPostViewController.swift */; };
+		F513ADB01DA81C9C005879A0 /* GeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513ADAE1DA81C9C005879A0 /* GeolocationService.swift */; };
+		F513ADB21DA81E38005879A0 /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513ADB11DA81E38005879A0 /* CLLocationManager+Rx.swift */; };
+		F513ADB41DA81EB3005879A0 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513ADB31DA81EB3005879A0 /* RxCLLocationManagerDelegateProxy.swift */; };
+		F521E2DE1DA81B3A0031FBCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F521E2DD1DA81B3A0031FBCC /* AppDelegate.swift */; };
+		F521E2E01DA81B3A0031FBCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F521E2DF1DA81B3A0031FBCC /* ViewController.swift */; };
+		F521E2E31DA81B3A0031FBCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F521E2E11DA81B3A0031FBCC /* Main.storyboard */; };
+		F521E2E51DA81B3A0031FBCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F521E2E41DA81B3A0031FBCC /* Assets.xcassets */; };
+		F521E2E81DA81B3A0031FBCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F521E2E61DA81B3A0031FBCC /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01B19980339A26F787B5C80A /* Pods-SaveDateLocationPhoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveDateLocationPhoto.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveDateLocationPhoto/Pods-SaveDateLocationPhoto.release.xcconfig"; sourceTree = "<group>"; };
+		1EFD3BCD70FB5CCBFC288DD7 /* Pods-SaveDateLocationPhoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveDateLocationPhoto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveDateLocationPhoto/Pods-SaveDateLocationPhoto.debug.xcconfig"; sourceTree = "<group>"; };
+		545FC3FD5144AF9182384944 /* Pods_SaveDateLocationPhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaveDateLocationPhoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F513ADAD1DA81C9C005879A0 /* AddPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		F513ADAE1DA81C9C005879A0 /* GeolocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeolocationService.swift; sourceTree = "<group>"; };
+		F513ADB11DA81E38005879A0 /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
+		F513ADB31DA81EB3005879A0 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		F521E2DA1DA81B3A0031FBCC /* SaveDateLocationPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveDateLocationPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F521E2DD1DA81B3A0031FBCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F521E2DF1DA81B3A0031FBCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F521E2E21DA81B3A0031FBCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F521E2E41DA81B3A0031FBCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F521E2E71DA81B3A0031FBCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F521E2E91DA81B3A0031FBCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F521E2D71DA81B3A0031FBCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C8EF36A352A25546C41878D /* Pods_SaveDateLocationPhoto.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9E19B72437EF2D5E9AA2DA26 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1EFD3BCD70FB5CCBFC288DD7 /* Pods-SaveDateLocationPhoto.debug.xcconfig */,
+				01B19980339A26F787B5C80A /* Pods-SaveDateLocationPhoto.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DF07D24FBC5B480B55DB9ADD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				545FC3FD5144AF9182384944 /* Pods_SaveDateLocationPhoto.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F521E2D11DA81B3A0031FBCC = {
+			isa = PBXGroup;
+			children = (
+				F521E2DC1DA81B3A0031FBCC /* SaveDateLocationPhoto */,
+				F521E2DB1DA81B3A0031FBCC /* Products */,
+				9E19B72437EF2D5E9AA2DA26 /* Pods */,
+				DF07D24FBC5B480B55DB9ADD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F521E2DB1DA81B3A0031FBCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F521E2DA1DA81B3A0031FBCC /* SaveDateLocationPhoto.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F521E2DC1DA81B3A0031FBCC /* SaveDateLocationPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				F521E2DD1DA81B3A0031FBCC /* AppDelegate.swift */,
+				F513ADAD1DA81C9C005879A0 /* AddPostViewController.swift */,
+				F513ADAE1DA81C9C005879A0 /* GeolocationService.swift */,
+				F513ADB11DA81E38005879A0 /* CLLocationManager+Rx.swift */,
+				F513ADB31DA81EB3005879A0 /* RxCLLocationManagerDelegateProxy.swift */,
+				F521E2DF1DA81B3A0031FBCC /* ViewController.swift */,
+				F521E2E11DA81B3A0031FBCC /* Main.storyboard */,
+				F521E2E41DA81B3A0031FBCC /* Assets.xcassets */,
+				F521E2E61DA81B3A0031FBCC /* LaunchScreen.storyboard */,
+				F521E2E91DA81B3A0031FBCC /* Info.plist */,
+			);
+			path = SaveDateLocationPhoto;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F521E2D91DA81B3A0031FBCC /* SaveDateLocationPhoto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F521E2EC1DA81B3A0031FBCC /* Build configuration list for PBXNativeTarget "SaveDateLocationPhoto" */;
+			buildPhases = (
+				055A8AF3FCE9CA510E362D59 /* [CP] Check Pods Manifest.lock */,
+				F521E2D61DA81B3A0031FBCC /* Sources */,
+				F521E2D71DA81B3A0031FBCC /* Frameworks */,
+				F521E2D81DA81B3A0031FBCC /* Resources */,
+				D3B29346DA036550686D9DEC /* [CP] Embed Pods Frameworks */,
+				37A4B31CEE06564A100C626C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SaveDateLocationPhoto;
+			productName = SaveDateLocationPhoto;
+			productReference = F521E2DA1DA81B3A0031FBCC /* SaveDateLocationPhoto.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F521E2D21DA81B3A0031FBCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = EdisonHsu;
+				TargetAttributes = {
+					F521E2D91DA81B3A0031FBCC = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F521E2D51DA81B3A0031FBCC /* Build configuration list for PBXProject "SaveDateLocationPhoto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F521E2D11DA81B3A0031FBCC;
+			productRefGroup = F521E2DB1DA81B3A0031FBCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F521E2D91DA81B3A0031FBCC /* SaveDateLocationPhoto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F521E2D81DA81B3A0031FBCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F521E2E81DA81B3A0031FBCC /* LaunchScreen.storyboard in Resources */,
+				F521E2E51DA81B3A0031FBCC /* Assets.xcassets in Resources */,
+				F521E2E31DA81B3A0031FBCC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		055A8AF3FCE9CA510E362D59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		37A4B31CEE06564A100C626C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveDateLocationPhoto/Pods-SaveDateLocationPhoto-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3B29346DA036550686D9DEC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveDateLocationPhoto/Pods-SaveDateLocationPhoto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F521E2D61DA81B3A0031FBCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F513ADB01DA81C9C005879A0 /* GeolocationService.swift in Sources */,
+				F513ADB41DA81EB3005879A0 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				F521E2E01DA81B3A0031FBCC /* ViewController.swift in Sources */,
+				F513ADB21DA81E38005879A0 /* CLLocationManager+Rx.swift in Sources */,
+				F513ADAF1DA81C9C005879A0 /* AddPostViewController.swift in Sources */,
+				F521E2DE1DA81B3A0031FBCC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F521E2E11DA81B3A0031FBCC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F521E2E21DA81B3A0031FBCC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F521E2E61DA81B3A0031FBCC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F521E2E71DA81B3A0031FBCC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F521E2EA1DA81B3A0031FBCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F521E2EB1DA81B3A0031FBCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F521E2ED1DA81B3A0031FBCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EFD3BCD70FB5CCBFC288DD7 /* Pods-SaveDateLocationPhoto.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SaveDateLocationPhoto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edison.SaveDateLocationPhoto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F521E2EE1DA81B3A0031FBCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B19980339A26F787B5C80A /* Pods-SaveDateLocationPhoto.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SaveDateLocationPhoto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edison.SaveDateLocationPhoto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F521E2D51DA81B3A0031FBCC /* Build configuration list for PBXProject "SaveDateLocationPhoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F521E2EA1DA81B3A0031FBCC /* Debug */,
+				F521E2EB1DA81B3A0031FBCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F521E2EC1DA81B3A0031FBCC /* Build configuration list for PBXNativeTarget "SaveDateLocationPhoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F521E2ED1DA81B3A0031FBCC /* Debug */,
+				F521E2EE1DA81B3A0031FBCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F521E2D21DA81B3A0031FBCC /* Project object */;
+}

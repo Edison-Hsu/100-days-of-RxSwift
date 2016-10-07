@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O9t-dD-1rD">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SaveDateLocationPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="N4k-DW-0Pc">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="pao-4K-Ylv">
+                            <color key="tintColor" red="0.16862745100000001" green="0.6588235294" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="KOu-sA-liv" kind="show" id="FSY-WK-uzd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542" y="331"/>
+        </scene>
+        <!--New Entity-->
+        <scene sceneID="TMs-QH-1Jm">
+            <objects>
+                <viewController id="KOu-sA-liv" customClass="AddPostViewController" customModule="SaveDateLocationPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9N2-Ny-Oy1"/>
+                        <viewControllerLayoutGuide type="bottom" id="sp9-Ys-Cge"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SZj-oo-c4b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fDl-Dt-81k">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="fDl-Dt-81k" secondAttribute="leading" id="6KE-vP-k4f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fDl-Dt-81k" secondAttribute="trailing" id="By9-HM-7vc"/>
+                            <constraint firstItem="fDl-Dt-81k" firstAttribute="top" secondItem="9N2-Ny-Oy1" secondAttribute="bottom" constant="8" id="W56-k1-wuE"/>
+                            <constraint firstItem="fDl-Dt-81k" firstAttribute="top" secondItem="9N2-Ny-Oy1" secondAttribute="bottom" constant="-64" id="Wrj-LK-x0t"/>
+                            <constraint firstItem="sp9-Ys-Cge" firstAttribute="top" secondItem="fDl-Dt-81k" secondAttribute="bottom" constant="20" id="o71-rx-voU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="W56-k1-wuE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Entity" id="10F-72-d6W">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="BLC-z5-HmA">
+                            <color key="tintColor" red="0.16862745100000001" green="0.6588235294" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="PSs-4H-t5g">
+                            <color key="tintColor" red="0.16862745098039217" green="0.6588235294117647" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="fDl-Dt-81k" id="VPD-7z-S6b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYh-Hx-4AH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2746" y="263"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zlB-8w-r3F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O9t-dD-1rD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XFi-kf-kF5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.92549019607843142" green="0.97254901960784312" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="XDB-GI-xzu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="but-0h-oId" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="864" y="331"/>
+        </scene>
+    </scenes>
+</document>

@@ -12,6 +12,9 @@
 		F513ADB01DA81C9C005879A0 /* GeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513ADAE1DA81C9C005879A0 /* GeolocationService.swift */; };
 		F513ADB21DA81E38005879A0 /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513ADB11DA81E38005879A0 /* CLLocationManager+Rx.swift */; };
 		F513ADB41DA81EB3005879A0 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513ADB31DA81EB3005879A0 /* RxCLLocationManagerDelegateProxy.swift */; };
+		F513ADB71DA82CE8005879A0 /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513ADB61DA82CE8005879A0 /* UIImagePickerController+Rx.swift */; };
+		F513ADBA1DA833D0005879A0 /* UIImagePickerController+RxCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513ADB91DA833D0005879A0 /* UIImagePickerController+RxCreate.swift */; };
+		F513ADBC1DA83448005879A0 /* RxImagePickerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513ADBB1DA83448005879A0 /* RxImagePickerDelegateProxy.swift */; };
 		F521E2DE1DA81B3A0031FBCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F521E2DD1DA81B3A0031FBCC /* AppDelegate.swift */; };
 		F521E2E01DA81B3A0031FBCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F521E2DF1DA81B3A0031FBCC /* ViewController.swift */; };
 		F521E2E31DA81B3A0031FBCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F521E2E11DA81B3A0031FBCC /* Main.storyboard */; };
@@ -27,6 +30,9 @@
 		F513ADAE1DA81C9C005879A0 /* GeolocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeolocationService.swift; sourceTree = "<group>"; };
 		F513ADB11DA81E38005879A0 /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		F513ADB31DA81EB3005879A0 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		F513ADB61DA82CE8005879A0 /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
+		F513ADB91DA833D0005879A0 /* UIImagePickerController+RxCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+RxCreate.swift"; sourceTree = "<group>"; };
+		F513ADBB1DA83448005879A0 /* RxImagePickerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxImagePickerDelegateProxy.swift; sourceTree = "<group>"; };
 		F521E2DA1DA81B3A0031FBCC /* SaveDateLocationPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveDateLocationPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F521E2DD1DA81B3A0031FBCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F521E2DF1DA81B3A0031FBCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +71,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F513ADB51DA82CD6005879A0 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F513ADBB1DA83448005879A0 /* RxImagePickerDelegateProxy.swift */,
+				F513ADB91DA833D0005879A0 /* UIImagePickerController+RxCreate.swift */,
+				F513ADB11DA81E38005879A0 /* CLLocationManager+Rx.swift */,
+				F513ADB31DA81EB3005879A0 /* RxCLLocationManagerDelegateProxy.swift */,
+				F513ADB61DA82CE8005879A0 /* UIImagePickerController+Rx.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
+		F513ADB81DA82D1B005879A0 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				F513ADAE1DA81C9C005879A0 /* GeolocationService.swift */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
 		F521E2D11DA81B3A0031FBCC = {
 			isa = PBXGroup;
 			children = (
@@ -88,10 +114,9 @@
 			children = (
 				F521E2DD1DA81B3A0031FBCC /* AppDelegate.swift */,
 				F513ADAD1DA81C9C005879A0 /* AddPostViewController.swift */,
-				F513ADAE1DA81C9C005879A0 /* GeolocationService.swift */,
-				F513ADB11DA81E38005879A0 /* CLLocationManager+Rx.swift */,
-				F513ADB31DA81EB3005879A0 /* RxCLLocationManagerDelegateProxy.swift */,
 				F521E2DF1DA81B3A0031FBCC /* ViewController.swift */,
+				F513ADB81DA82D1B005879A0 /* services */,
+				F513ADB51DA82CD6005879A0 /* extensions */,
 				F521E2E11DA81B3A0031FBCC /* Main.storyboard */,
 				F521E2E41DA81B3A0031FBCC /* Assets.xcassets */,
 				F521E2E61DA81B3A0031FBCC /* LaunchScreen.storyboard */,
@@ -223,10 +248,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F513ADBC1DA83448005879A0 /* RxImagePickerDelegateProxy.swift in Sources */,
 				F513ADB01DA81C9C005879A0 /* GeolocationService.swift in Sources */,
 				F513ADB41DA81EB3005879A0 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				F513ADB71DA82CE8005879A0 /* UIImagePickerController+Rx.swift in Sources */,
 				F521E2E01DA81B3A0031FBCC /* ViewController.swift in Sources */,
 				F513ADB21DA81E38005879A0 /* CLLocationManager+Rx.swift in Sources */,
+				F513ADBA1DA833D0005879A0 /* UIImagePickerController+RxCreate.swift in Sources */,
 				F513ADAF1DA81C9C005879A0 /* AddPostViewController.swift in Sources */,
 				F521E2DE1DA81B3A0031FBCC /* AppDelegate.swift in Sources */,
 			);

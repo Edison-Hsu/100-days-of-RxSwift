@@ -22,7 +22,12 @@ class AddPostViewController: UIViewController {
         bar.tintColor = UIColor.white
         bar.isTranslucent = false
         bar.clipsToBounds = true
-        bar.items = [self.cameraButton, self.locationButton]
+        bar.items = [
+            self.cameraButton,
+            self.locationButton,
+            UIBarButtonItem(customView: self.imageView),
+            UIBarButtonItem(customView: self.locationLabel)
+        ]
         return bar
     }()
     
@@ -39,6 +44,16 @@ class AddPostViewController: UIViewController {
         return btn
     }()
     
+    let imageView: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        return imageView
+    }()
+    
+    let locationLabel: UILabel = {
+        let location = UILabel(frame: CGRect(x: 0,y: 0, width: 100, height: 40))
+        return location
+    }()
+    
     let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
@@ -46,6 +61,20 @@ class AddPostViewController: UIViewController {
 
         textView.inputAccessoryView = toolbar
         
+        cameraButton.rx.tap
+            .flatMapLatest { [weak self] _ in
+                return UIImagePickerController.rx.createWithParent(self) { picker in
+                    picker.sourceType = .photoLibrary
+                    picker.allowsEditing = true
+                }
+                .flatMap { $0.rx.didFinishPickingMediaWithInfo }
+                .take(1)
+            }
+            .map { info in
+                return info[UIImagePickerControllerEditedImage] as? UIImage
+            }
+            .bindTo(imageView.rx.image)
+            .addDisposableTo(disposeBag)
     }
 
     override func didReceiveMemoryWarning() {

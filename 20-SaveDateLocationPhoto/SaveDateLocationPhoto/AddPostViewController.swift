@@ -98,8 +98,9 @@ class AddPostViewController: UIViewController {
     }()
     
     let locationLabel: UILabel = {
-        let location = UILabel(frame: CGRect(x: 0,y: 0, width: 300, height: 40))
+        let location = UILabel(frame: CGRect(x: 0,y: 0, width: 240, height: 40))
         location.adjustsFontSizeToFitWidth = true
+        location.textColor = UIColor.darkGray
         return location
     }()
     
@@ -129,8 +130,6 @@ class AddPostViewController: UIViewController {
             .bindTo(imageView.rx.image)
             .addDisposableTo(disposeBag)
         
-        
-        
         geolocationService.authorized
             .drive(noGeolocationView.rx.driveAuthorization)
             .addDisposableTo(disposeBag)
@@ -138,6 +137,11 @@ class AddPostViewController: UIViewController {
         geolocationService.location
             .drive(locationLabel.rx.location)
             .addDisposableTo(disposeBag)
+        
+        locationButton.rx.tap
+            .bindNext { [weak self] in
+                self?.geolocationService.updateLocation()
+            }.addDisposableTo(disposeBag)
     }
 
     override func didReceiveMemoryWarning() {

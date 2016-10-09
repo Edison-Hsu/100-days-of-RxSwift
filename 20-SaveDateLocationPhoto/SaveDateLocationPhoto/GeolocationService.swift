@@ -54,7 +54,13 @@ class GeolocationService {
         
         
         locationManager.requestWhenInUseAuthorization()
+    }
+    
+    func updateLocation() {
         locationManager.startUpdatingLocation()
     }
     
+    func stopLocation() {
+        locationManager.stopUpdatingLocation()
+    }
 }

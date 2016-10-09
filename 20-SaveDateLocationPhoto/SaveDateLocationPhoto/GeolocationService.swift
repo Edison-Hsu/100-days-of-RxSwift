@@ -17,7 +17,7 @@ class GeolocationService {
     
     static let instance = GeolocationService()
     private (set) var authorized: Driver<Bool>
-    private (set) var location: Driver<CLLocationCoordinate2D>
+    private (set) var location: Driver<CLLocation>
     
     private let locationManager = CLLocationManager()
     
@@ -38,7 +38,7 @@ class GeolocationService {
             .asDriver(onErrorJustReturn: CLAuthorizationStatus.notDetermined)
             .map {
                 switch $0 {
-                case .authorizedAlways:
+                case .authorizedAlways, .authorizedWhenInUse:
                     return true
                 default:
                     return false
@@ -50,10 +50,10 @@ class GeolocationService {
             .flatMap {
                 return $0.last.map(Driver.just) ?? Driver.empty()
             }
-            .map { $0.coordinate }
+            .map { $0 }
         
         
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
     

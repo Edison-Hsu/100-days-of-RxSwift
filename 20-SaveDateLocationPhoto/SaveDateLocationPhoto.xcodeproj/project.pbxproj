@@ -20,6 +20,7 @@
 		F521E2E31DA81B3A0031FBCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F521E2E11DA81B3A0031FBCC /* Main.storyboard */; };
 		F521E2E51DA81B3A0031FBCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F521E2E41DA81B3A0031FBCC /* Assets.xcassets */; };
 		F521E2E81DA81B3A0031FBCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F521E2E61DA81B3A0031FBCC /* LaunchScreen.storyboard */; };
+		F5476B9C1DAA9649000F706F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5476B9B1DAA9648000F706F /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		F521E2E41DA81B3A0031FBCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F521E2E71DA81B3A0031FBCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F521E2E91DA81B3A0031FBCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5476B9B1DAA9648000F706F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5476B9C1DAA9649000F706F /* CoreLocation.framework in Frameworks */,
 				2C8EF36A352A25546C41878D /* Pods_SaveDateLocationPhoto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +69,7 @@
 		DF07D24FBC5B480B55DB9ADD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F5476B9B1DAA9648000F706F /* CoreLocation.framework */,
 				545FC3FD5144AF9182384944 /* Pods_SaveDateLocationPhoto.framework */,
 			);
 			name = Frameworks;
@@ -160,6 +164,7 @@
 				TargetAttributes = {
 					F521E2D91DA81B3A0031FBCC = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = G2CX929964;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -383,6 +388,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G2CX929964;
 				INFOPLIST_FILE = SaveDateLocationPhoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edison.SaveDateLocationPhoto;
@@ -397,6 +403,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G2CX929964;
 				INFOPLIST_FILE = SaveDateLocationPhoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edison.SaveDateLocationPhoto;

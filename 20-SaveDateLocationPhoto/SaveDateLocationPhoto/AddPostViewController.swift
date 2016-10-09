@@ -11,6 +11,54 @@ import RxSwift
 import RxCocoa
 import CoreLocation
 
+private extension Reactive where Base: UILabel {
+    var location: AnyObserver<CLLocation> {
+        return UIBindingObserver(UIElement: base) { label, location in
+
+            CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
+                debugPrint(location)
+                
+                if error != nil {
+                    debugPrint("Reverse geocoder failed with error" + (error!.localizedDescription))
+                    return
+                }
+                
+                if let placemarks = placemarks, placemarks.count > 0 {
+                    let pm = placemarks[0]
+                    let street = displayLocationInfo(placemark: pm)
+                    debugPrint(street)
+                    label.text = street
+                }
+                else {
+                    debugPrint("Problem with the data received from geocoder")
+                }
+            })
+            
+            }.asObserver()
+    }
+}
+
+func displayLocationInfo(placemark: CLPlacemark) -> String {
+    let location = "\(placemark.thoroughfare ?? "") \(placemark.locality ?? "") \(placemark.administrativeArea ?? "") \(placemark.country ?? "")"
+
+    return location
+}
+
+private extension Reactive where Base: UIView {
+    var driveAuthorization: AnyObserver<Bool> {
+        return UIBindingObserver(UIElement: base) { view, authorized in
+            if authorized {
+                view.isHidden = true
+                view.superview?.sendSubview(toBack:view)
+            }
+            else {
+                view.isHidden = false
+                view.superview?.bringSubview(toFront:view)
+            }
+            }.asObserver()
+    }
+}
+
 class AddPostViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
@@ -25,8 +73,8 @@ class AddPostViewController: UIViewController {
         bar.items = [
             self.cameraButton,
             self.locationButton,
-            UIBarButtonItem(customView: self.imageView),
-            UIBarButtonItem(customView: self.locationLabel)
+            UIBarButtonItem(customView: self.locationLabel),
+            UIBarButtonItem(customView: self.imageView)
         ]
         return bar
     }()
@@ -50,11 +98,16 @@ class AddPostViewController: UIViewController {
     }()
     
     let locationLabel: UILabel = {
-        let location = UILabel(frame: CGRect(x: 0,y: 0, width: 100, height: 40))
+        let location = UILabel(frame: CGRect(x: 0,y: 0, width: 300, height: 40))
+        location.adjustsFontSizeToFitWidth = true
         return location
     }()
     
-    let locationManager = CLLocationManager()
+    let geolocationService = GeolocationService.instance
+    let noGeolocationView: UIView = {
+        let view = UIView()
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +127,16 @@ class AddPostViewController: UIViewController {
                 return info[UIImagePickerControllerEditedImage] as? UIImage
             }
             .bindTo(imageView.rx.image)
+            .addDisposableTo(disposeBag)
+        
+        
+        
+        geolocationService.authorized
+            .drive(noGeolocationView.rx.driveAuthorization)
+            .addDisposableTo(disposeBag)
+        
+        geolocationService.location
+            .drive(locationLabel.rx.location)
             .addDisposableTo(disposeBag)
     }
 

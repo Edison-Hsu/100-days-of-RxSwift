@@ -19,16 +19,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-Wv-cSh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-Wv-cSh">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="Yp7-dg-r5F">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="140" id="Yp7-dg-r5F" customClass="TableViewCell" customModule="SaveDateLocationPhoto" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yp7-dg-r5F" id="iVB-uC-e1G">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VqA-Ki-psD">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="88" id="NOQ-5I-qHg"/>
+                                                        <constraint firstAttribute="width" constant="88" id="m26-N3-D7e"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpH-C0-tbp" userLabel="date">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ie8-iJ-zdE">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhK-DK-yde" userLabel="location">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wpH-C0-tbp" firstAttribute="top" secondItem="iVB-uC-e1G" secondAttribute="topMargin" constant="8" id="5z4-lg-sdO"/>
+                                                <constraint firstItem="Ie8-iJ-zdE" firstAttribute="top" secondItem="wpH-C0-tbp" secondAttribute="bottom" constant="8" id="6lz-8d-ffG"/>
+                                                <constraint firstItem="VqA-Ki-psD" firstAttribute="leading" secondItem="iVB-uC-e1G" secondAttribute="leadingMargin" constant="8" id="815-PN-uXv"/>
+                                                <constraint firstItem="yhK-DK-yde" firstAttribute="leading" secondItem="wpH-C0-tbp" secondAttribute="leading" id="GcL-2l-kHW"/>
+                                                <constraint firstItem="VqA-Ki-psD" firstAttribute="top" secondItem="iVB-uC-e1G" secondAttribute="topMargin" constant="8" id="LrT-A4-0Fe"/>
+                                                <constraint firstItem="wpH-C0-tbp" firstAttribute="leading" secondItem="VqA-Ki-psD" secondAttribute="trailing" constant="8" id="MEn-Jz-A79"/>
+                                                <constraint firstItem="Ie8-iJ-zdE" firstAttribute="leading" secondItem="VqA-Ki-psD" secondAttribute="trailing" constant="8" id="Pio-j2-V5Y"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wpH-C0-tbp" secondAttribute="trailing" constant="165" id="fvE-ra-jZT"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ie8-iJ-zdE" secondAttribute="trailing" id="j0c-GI-KBx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yhK-DK-yde" secondAttribute="bottom" constant="8" id="kVE-CI-Bds"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yhK-DK-yde" secondAttribute="trailing" constant="8" id="rTV-s1-zi8"/>
+                                                <constraint firstItem="yhK-DK-yde" firstAttribute="top" secondItem="Ie8-iJ-zdE" secondAttribute="bottom" constant="8" id="unb-SK-RYV"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentText" destination="Ie8-iJ-zdE" id="k8b-cB-tk4"/>
+                                            <outlet property="dateLabel" destination="wpH-C0-tbp" id="YVr-oR-uyE"/>
+                                            <outlet property="locationLabel" destination="yhK-DK-yde" id="iUa-pK-eX4"/>
+                                            <outlet property="picView" destination="VqA-Ki-psD" id="Xz4-Gh-Z9Y"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

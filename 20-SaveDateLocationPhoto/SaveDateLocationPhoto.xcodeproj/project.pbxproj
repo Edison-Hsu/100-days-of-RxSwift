@@ -21,6 +21,7 @@
 		F521E2E51DA81B3A0031FBCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F521E2E41DA81B3A0031FBCC /* Assets.xcassets */; };
 		F521E2E81DA81B3A0031FBCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F521E2E61DA81B3A0031FBCC /* LaunchScreen.storyboard */; };
 		F5476B9C1DAA9649000F706F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5476B9B1DAA9648000F706F /* CoreLocation.framework */; };
+		F5836C5A1DAD3E250039E847 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5836C591DAD3E250039E847 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F521E2E71DA81B3A0031FBCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F521E2E91DA81B3A0031FBCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5476B9B1DAA9648000F706F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F5836C591DAD3E250039E847 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				F521E2DD1DA81B3A0031FBCC /* AppDelegate.swift */,
 				F513ADAD1DA81C9C005879A0 /* AddPostViewController.swift */,
 				F521E2DF1DA81B3A0031FBCC /* ViewController.swift */,
+				F5836C591DAD3E250039E847 /* TableViewCell.swift */,
 				F513ADB81DA82D1B005879A0 /* services */,
 				F513ADB51DA82CD6005879A0 /* extensions */,
 				F521E2E11DA81B3A0031FBCC /* Main.storyboard */,
@@ -258,6 +261,7 @@
 				F513ADB41DA81EB3005879A0 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				F513ADB71DA82CE8005879A0 /* UIImagePickerController+Rx.swift in Sources */,
 				F521E2E01DA81B3A0031FBCC /* ViewController.swift in Sources */,
+				F5836C5A1DAD3E250039E847 /* TableViewCell.swift in Sources */,
 				F513ADB21DA81E38005879A0 /* CLLocationManager+Rx.swift in Sources */,
 				F513ADBA1DA833D0005879A0 /* UIImagePickerController+RxCreate.swift in Sources */,
 				F513ADAF1DA81C9C005879A0 /* AddPostViewController.swift in Sources */,

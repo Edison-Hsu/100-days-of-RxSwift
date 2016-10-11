@@ -111,6 +111,8 @@ class AddPostViewController: UIViewController {
         let view = UIView()
         return view
     }()
+    
+    weak var delegate: TableViewDelegate? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,6 +149,13 @@ class AddPostViewController: UIViewController {
         
         cancelButton.rx.tap
             .bindNext { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }.addDisposableTo(disposeBag)
+        
+        doneButton.rx.tap
+            .bindNext { [weak self] in
+                let item = Item(image: (self?.imageView.image!)!, date: "123", content: "234", location: "345")
+                self?.delegate?.addItem(item: item)
                 self?.navigationController?.popViewController(animated: true)
             }.addDisposableTo(disposeBag)
     }

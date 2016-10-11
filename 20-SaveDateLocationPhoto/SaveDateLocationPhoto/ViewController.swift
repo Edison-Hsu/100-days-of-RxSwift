@@ -11,9 +11,9 @@ import RxSwift
 import RxCocoa
 
 class Item {
-    private let image:UIImage
-    private let date:String
-    private let content:String
+    let image:UIImage
+    let date:String
+    let content:String
     let location:String
     
     init(image: UIImage, date: String, content: String, location: String) {
@@ -24,7 +24,11 @@ class Item {
     }
 }
 
-class ViewController: UIViewController {
+protocol TableViewDelegate: class {
+    func addItem(item: Item)
+}
+
+class ViewController: UIViewController, TableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     let items = Variable(Array<Item>())
     let disposeBag = DisposeBag()
@@ -33,18 +37,29 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         items.asObservable()
-            .bindTo(tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
-                cell.textLabel?.text = "\(element.location) @ row \(row)"
+            .bindTo(tableView.rx.items(cellIdentifier: "Cell", cellType: TableViewCell.self)) { (row, element, cell) in
+                cell.picView.image = element.image
+                cell.dateLabel.text = element.date
+                cell.contentText.text = element.content
+                cell.locationLabel.text = element.location
             }
             .addDisposableTo(disposeBag)
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationController = segue.destination
+        let vc:AddPostViewController = navigationController as! AddPostViewController
+        vc.delegate = self
+    }
 
+    func addItem(item: Item) {
+        self.items.value.append(item)
+    }
 
 }
 

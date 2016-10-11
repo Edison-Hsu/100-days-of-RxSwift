@@ -89,7 +89,7 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="pao-4K-Ylv">
                             <color key="tintColor" red="0.16862745100000001" green="0.6588235294" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="KOu-sA-liv" kind="show" id="FSY-WK-uzd"/>
+                                <segue destination="KOu-sA-liv" kind="show" id="VFn-hO-lCA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

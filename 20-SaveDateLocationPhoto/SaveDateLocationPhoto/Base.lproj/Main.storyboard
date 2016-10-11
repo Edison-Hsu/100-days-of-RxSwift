@@ -18,7 +18,28 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-Wv-cSh">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="Yp7-dg-r5F">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yp7-dg-r5F" id="iVB-uC-e1G">
+                                            <frame key="frameInset" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Aj-Wv-cSh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1jG-7d-lOX"/>
+                            <constraint firstItem="8Aj-Wv-cSh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="DcB-GP-lk7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8Aj-Wv-cSh" secondAttribute="bottom" id="GNU-CO-5X0"/>
+                            <constraint firstAttribute="trailing" secondItem="8Aj-Wv-cSh" secondAttribute="trailing" id="KWN-5H-f6a"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="N4k-DW-0Pc">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="pao-4K-Ylv">
@@ -28,10 +49,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="8Aj-Wv-cSh" id="Lql-Aq-ZHE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="331"/>
+            <point key="canvasLocation" x="1541.5999999999999" y="330.58470764617692"/>
         </scene>
         <!--New Entity-->
         <scene sceneID="TMs-QH-1Jm">
@@ -68,6 +92,9 @@
                     <navigationItem key="navigationItem" title="New Entity" id="10F-72-d6W">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="BLC-z5-HmA">
                             <color key="tintColor" red="0.16862745100000001" green="0.6588235294" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="goBack" destination="uYh-Hx-4AH" id="K5J-bp-aDb"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="PSs-4H-t5g">
                             <color key="tintColor" red="0.16862745098039217" green="0.6588235294117647" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYh-Hx-4AH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2746" y="263"/>
+            <point key="canvasLocation" x="2545" y="331"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zlB-8w-r3F">

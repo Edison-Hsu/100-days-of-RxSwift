@@ -11,6 +11,6 @@ import UIKit
 class TableViewCell: UITableViewCell {
     @IBOutlet weak var picView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var contentText: UITextView!
+    @IBOutlet weak var contentText: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
 }

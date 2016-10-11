@@ -100,7 +100,7 @@ class AddPostViewController: UIViewController {
     }()
     
     let locationLabel: UILabel = {
-        let location = UILabel(frame: CGRect(x: 0,y: 0, width: 240, height: 40))
+        let location = UILabel(frame: CGRect(x: 0,y: 0, width: 200, height: 40))
         location.adjustsFontSizeToFitWidth = true
         location.textColor = UIColor.darkGray
         return location
@@ -149,14 +149,22 @@ class AddPostViewController: UIViewController {
         
         cancelButton.rx.tap
             .bindNext { [weak self] in
-                self?.navigationController?.popViewController(animated: true)
+                _ = self?.navigationController?.popViewController(animated: true)
             }.addDisposableTo(disposeBag)
         
         doneButton.rx.tap
             .bindNext { [weak self] in
-                let item = Item(image: (self?.imageView.image!)!, date: "123", content: "234", location: "345")
+                let currentDateTime = Date()
+                let formatter = DateFormatter()
+                formatter.timeStyle = .medium
+                formatter.dateStyle = .long
+                
+                let item = Item(image: (self?.imageView.image!)!,
+                                date: formatter.string(from: currentDateTime),
+                                content: (self?.textView.text!)!,
+                                location: (self?.locationLabel.text!)!)
                 self?.delegate?.addItem(item: item)
-                self?.navigationController?.popViewController(animated: true)
+                _ = self?.navigationController?.popViewController(animated: true)
             }.addDisposableTo(disposeBag)
     }
 

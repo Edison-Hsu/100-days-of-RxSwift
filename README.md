@@ -6,12 +6,14 @@ Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but ref
 - Xcode 7.3
 - iOS 9.3
 - Simulator iPhone 6s 
+- - RxSwift 2.5
 
 **Project 20-40**
 - Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)
 - Xcode Version 8.0 (8A218a)
 - iOS 10.0
 - Simulator iPhone 7
+- RxSwift 3.0
 
 ## PROJECT 19 - BUTTONS ABOVE KEYBOARD
 ##### 2016-05-14

@@ -1,10 +1,17 @@
 # 100 Days and 40 Projects of RxSwift
 Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but refactor by RxSwift.
 
+**Project 1-19**
 - Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)
 - Xcode 7.3
 - iOS 9.3
 - Simulator iPhone 6s 
+
+**Project 20-40**
+- Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)
+- Xcode Version 8.0 (8A218a)
+- iOS 10.0
+- Simulator iPhone 7
 
 ## PROJECT 19 - BUTTONS ABOVE KEYBOARD
 ##### 2016-05-14

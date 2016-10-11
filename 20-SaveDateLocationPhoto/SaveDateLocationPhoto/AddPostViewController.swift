@@ -61,6 +61,8 @@ private extension Reactive where Base: UIView {
 
 class AddPostViewController: UIViewController {
     
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var textView: UITextView!
     
     fileprivate let disposeBag = DisposeBag()
@@ -141,6 +143,11 @@ class AddPostViewController: UIViewController {
         locationButton.rx.tap
             .bindNext { [weak self] in
                 self?.geolocationService.updateLocation()
+            }.addDisposableTo(disposeBag)
+        
+        cancelButton.rx.tap
+            .bindNext { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
             }.addDisposableTo(disposeBag)
     }
 

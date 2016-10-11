@@ -92,21 +92,20 @@
                     <navigationItem key="navigationItem" title="New Entity" id="10F-72-d6W">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="BLC-z5-HmA">
                             <color key="tintColor" red="0.16862745100000001" green="0.6588235294" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="goBack" destination="uYh-Hx-4AH" id="K5J-bp-aDb"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="PSs-4H-t5g">
                             <color key="tintColor" red="0.16862745098039217" green="0.6588235294117647" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="BLC-z5-HmA" id="0Bx-Ns-Pp6"/>
+                        <outlet property="doneButton" destination="PSs-4H-t5g" id="Txa-kc-kZN"/>
                         <outlet property="textView" destination="fDl-Dt-81k" id="VPD-7z-S6b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYh-Hx-4AH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2545" y="331"/>
+            <point key="canvasLocation" x="2246" y="331"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zlB-8w-r3F">

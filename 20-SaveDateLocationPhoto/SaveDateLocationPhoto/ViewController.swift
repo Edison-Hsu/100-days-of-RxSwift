@@ -58,7 +58,7 @@ class ViewController: UIViewController, TableViewDelegate {
     }
 
     func addItem(item: Item) {
-        self.items.value.append(item)
+        self.items.value.insert(item, at: 0)
     }
 
 }

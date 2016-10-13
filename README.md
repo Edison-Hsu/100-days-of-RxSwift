@@ -15,6 +15,18 @@ Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but ref
 - Simulator iPhone 7
 - RxSwift 3.0
 
+## PROJECT 20 - Save Date Location Photo
+##### 2016-10-13
+![gif](gifs/20-SaveDateLocationPhoto.gif)
+
+What I Learned:
+
+- UITableView simple data source with RxSwift
+- Get current location with RxSwift
+- Get image with RxSwift
+
+Tools: Xcode
+
 ## PROJECT 19 - BUTTONS ABOVE KEYBOARD
 ##### 2016-05-14
 ![gif](gifs/19-ButtonsAboveKeyboard.gif)

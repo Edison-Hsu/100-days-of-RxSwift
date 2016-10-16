@@ -1,0 +1,6 @@
+framework module Pods_SetLocation {
+  umbrella header "Pods-SetLocation-umbrella.h"
+
+  export *
+  module * { export * }
+}

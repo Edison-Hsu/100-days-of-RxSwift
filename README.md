@@ -15,6 +15,14 @@ Similar with [samvlu's 100-days-of-swift](http://samvlu.com/index.html), but ref
 - Simulator iPhone 7
 - RxSwift 3.0
 
+## PROJECT 21 - Set Location
+##### 2016-10-17 
+![gif](gifs/21-SetLocation.gif)
+
+What I Learned:
+
+- Get current location with RxSwift
+
 ## PROJECT 20 - Save Date Location Photo
 ##### 2016-10-13
 ![gif](gifs/20-SaveDateLocationPhoto.gif)

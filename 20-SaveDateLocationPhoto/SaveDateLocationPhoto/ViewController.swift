@@ -37,7 +37,7 @@ class ViewController: UIViewController, TableViewDelegate {
         super.viewDidLoad()
         
         items.asObservable()
-            .bindTo(tableView.rx.items(cellIdentifier: "Cell", cellType: TableViewCell.self)) { (row, element, cell) in
+            .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: TableViewCell.self)) { (row, element, cell) in
                 cell.picView.image = element.image
                 cell.dateLabel.text = element.date
                 cell.contentText.text = element.content

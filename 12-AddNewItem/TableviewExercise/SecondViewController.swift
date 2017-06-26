@@ -10,7 +10,7 @@ import UIKit
 
 // protocol used for sending data back
 protocol DataEnteredDelegate: class {
-    func userDidEnterInformation(info: String)
+    func userDidEnterInformation(_ info: String)
 }
 
 class SecondViewController: UIViewController {
@@ -26,7 +26,7 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         textField.becomeFirstResponder()
@@ -38,9 +38,9 @@ class SecondViewController: UIViewController {
     }
     
 
-    @IBAction func textOnExit(sender: AnyObject) {
+    @IBAction func textOnExit(_ sender: AnyObject) {
         delegate?.userDidEnterInformation(textField.text!)
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     /*
     // MARK: - Navigation

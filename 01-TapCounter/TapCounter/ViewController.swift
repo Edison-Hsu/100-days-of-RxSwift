@@ -14,22 +14,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var tapButton: UIButton!
     @IBOutlet weak var resetButton: UIBarButtonItem!
     @IBOutlet weak var numberLabel: UILabel!
-    private let disposeBag = DisposeBag()
+    fileprivate let disposeBag = DisposeBag()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tapButton.rx_tap
-            .subscribeNext { [weak self] x in
-                let number = Int((self?.numberLabel.text)!)
-                self?.numberLabel.text = String(number!+1)
-            }.addDisposableTo(disposeBag)
+        tapButton.rx.tap.subscribe({ [weak self] _ in
+            guard let this = self else {
+                return
+            }
+            guard let text = this.numberLabel.text else {
+                return
+            }
+            guard let number = Int(text) else {
+                return
+            }
+            this.numberLabel.text = String(number+1)
+        }).addDisposableTo(disposeBag)
         
-        resetButton.rx_tap
-            .subscribeNext { [weak self] in
-                self?.numberLabel.text = "0"
-            }.addDisposableTo(disposeBag)
+        resetButton.rx.tap.subscribe({ [weak self] _ in
+            guard let this = self else {
+                return
+            }
+            this.numberLabel.text = "0"
+        }).addDisposableTo(disposeBag)
+        
     }
 
     override func didReceiveMemoryWarning() {

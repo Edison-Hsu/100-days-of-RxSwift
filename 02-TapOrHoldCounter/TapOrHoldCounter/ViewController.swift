@@ -22,20 +22,39 @@ class ViewController: UIViewController {
         let longPressGesture = UILongPressGestureRecognizer()
         longPressGesture.rx.event
             .subscribe(onNext: { [weak self] _ in
-                let number = Int((self?.numberLabel.text)!)
-                self?.numberLabel.text = String(number!+1)
+                guard let this = self else {
+                    return
+                }
+                guard let text = this.numberLabel.text else {
+                    return
+                }
+                guard let number = Int(text) else {
+                    return
+                }
+                this.numberLabel.text = String(number+1)
             }).addDisposableTo(disposeBag)
         self.tapButton.addGestureRecognizer(longPressGesture)
         
         tapButton.rx.tap
-            .subscribe(onNext: { [weak self] x in
-                let number = Int((self?.numberLabel.text)!)
-                self?.numberLabel.text = String(number!+1)
+            .subscribe(onNext: { [weak self] in
+                guard let this = self else {
+                    return
+                }
+                guard let text = this.numberLabel.text else {
+                    return
+                }
+                guard let number = Int(text) else {
+                    return
+                }
+                this.numberLabel.text = String(number+1)
             }).addDisposableTo(disposeBag)
         
         resetButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                self?.numberLabel.text = "0"
+                guard let this = self else {
+                    return
+                }
+                this.numberLabel.text = "0"
             }).addDisposableTo(disposeBag)
         
     }

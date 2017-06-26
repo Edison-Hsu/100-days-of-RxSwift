@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class ViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableview: UITableView!
@@ -49,26 +50,23 @@ class ViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        
         let dataSource = self.dataSource
         
         dataSource.configureCell = { (_, tv, indexPath, element) in
-            let cell = tv.dequeueReusableCellWithIdentifier("Cell")!
+            let cell = tv.dequeueReusableCell(withIdentifier: "Cell")!
             cell.textLabel?.text = element
             return cell
         }
         
-        items
-            .bindTo(tableview.rx_itemsWithDataSource(dataSource))
+        items.bind(to: tableview.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
         
-        tableview.rx_setDelegate(self)
+        _ = tableview.rx.setDelegate(self)
     }
     
-    override func setEditing(editing: Bool, animated: Bool) {
+    override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
-        tableview.editing = editing
+        tableview.isEditing = editing
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,17 +75,14 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 20
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCellWithIdentifier("header")
-        cell!.textLabel?.text = dataSource.sectionAtIndex(section).model
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "header")
+        cell!.textLabel?.text = dataSource[section].model
         return cell
     }
-    
-    
 
 }
-

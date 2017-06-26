@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32CEA17E7843B80EC730FCF1 /* Pods_AddPhotoFromCameraRoll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 306611EA64C6211C64A7ED4F /* Pods_AddPhotoFromCameraRoll.framework */; };
+		8036672B1F00A85600D2BFC8 /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8036672A1F00A85600D2BFC8 /* UIImagePickerController+Rx.swift */; };
+		CA9B214793AA91D82ABD962A /* Pods_AddPhotoFromCameraRoll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A23B48C398EB960683EDF64 /* Pods_AddPhotoFromCameraRoll.framework */; };
 		F5533C4A1CBFE68900376ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5533C491CBFE68900376ADC /* AppDelegate.swift */; };
 		F5533C4C1CBFE68900376ADC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5533C4B1CBFE68900376ADC /* ViewController.swift */; };
 		F5533C4F1CBFE68900376ADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5533C4D1CBFE68900376ADC /* Main.storyboard */; };
@@ -17,9 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		306611EA64C6211C64A7ED4F /* Pods_AddPhotoFromCameraRoll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddPhotoFromCameraRoll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDDE50126D09A91F675B19D9 /* Pods-AddPhotoFromCameraRoll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddPhotoFromCameraRoll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddPhotoFromCameraRoll/Pods-AddPhotoFromCameraRoll.debug.xcconfig"; sourceTree = "<group>"; };
-		F40F3D8C77BC41778762D9F1 /* Pods-AddPhotoFromCameraRoll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddPhotoFromCameraRoll.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddPhotoFromCameraRoll/Pods-AddPhotoFromCameraRoll.release.xcconfig"; sourceTree = "<group>"; };
+		72B6D4ECEA6B85576BA89626 /* Pods-AddPhotoFromCameraRoll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddPhotoFromCameraRoll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddPhotoFromCameraRoll/Pods-AddPhotoFromCameraRoll.debug.xcconfig"; sourceTree = "<group>"; };
+		8036672A1F00A85600D2BFC8 /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
+		8A23B48C398EB960683EDF64 /* Pods_AddPhotoFromCameraRoll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddPhotoFromCameraRoll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B97554E426F443821D821505 /* Pods-AddPhotoFromCameraRoll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddPhotoFromCameraRoll.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddPhotoFromCameraRoll/Pods-AddPhotoFromCameraRoll.release.xcconfig"; sourceTree = "<group>"; };
 		F5533C461CBFE68900376ADC /* AddPhotoFromCameraRoll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddPhotoFromCameraRoll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5533C491CBFE68900376ADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5533C4B1CBFE68900376ADC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,28 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32CEA17E7843B80EC730FCF1 /* Pods_AddPhotoFromCameraRoll.framework in Frameworks */,
+				CA9B214793AA91D82ABD962A /* Pods_AddPhotoFromCameraRoll.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		44886C68D0E2FD763FDD3283 /* Frameworks */ = {
+		10A006343FE0A5B88413B1D8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				306611EA64C6211C64A7ED4F /* Pods_AddPhotoFromCameraRoll.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		990FEB7DE94AC945A539B1AB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EDDE50126D09A91F675B19D9 /* Pods-AddPhotoFromCameraRoll.debug.xcconfig */,
-				F40F3D8C77BC41778762D9F1 /* Pods-AddPhotoFromCameraRoll.release.xcconfig */,
+				72B6D4ECEA6B85576BA89626 /* Pods-AddPhotoFromCameraRoll.debug.xcconfig */,
+				B97554E426F443821D821505 /* Pods-AddPhotoFromCameraRoll.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		66F0E2CF4CB3533B288BCA0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A23B48C398EB960683EDF64 /* Pods_AddPhotoFromCameraRoll.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F5533C3D1CBFE68900376ADC = {
@@ -64,8 +66,8 @@
 			children = (
 				F5533C481CBFE68900376ADC /* AddPhotoFromCameraRoll */,
 				F5533C471CBFE68900376ADC /* Products */,
-				990FEB7DE94AC945A539B1AB /* Pods */,
-				44886C68D0E2FD763FDD3283 /* Frameworks */,
+				10A006343FE0A5B88413B1D8 /* Pods */,
+				66F0E2CF4CB3533B288BCA0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +84,7 @@
 			children = (
 				F5533C491CBFE68900376ADC /* AppDelegate.swift */,
 				F5533C4B1CBFE68900376ADC /* ViewController.swift */,
+				8036672A1F00A85600D2BFC8 /* UIImagePickerController+Rx.swift */,
 				F59011701CC14AF40019D4D2 /* UIImagePickerController+RxCreate.swift */,
 				F5533C4D1CBFE68900376ADC /* Main.storyboard */,
 				F5533C501CBFE68900376ADC /* Assets.xcassets */,
@@ -98,12 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5533C581CBFE68900376ADC /* Build configuration list for PBXNativeTarget "AddPhotoFromCameraRoll" */;
 			buildPhases = (
-				A1B07938DF3D5AD9F2EBFA65 /* Check Pods Manifest.lock */,
+				7343F57ACF8F78D5E9DEA4D5 /* [CP] Check Pods Manifest.lock */,
 				F5533C421CBFE68900376ADC /* Sources */,
 				F5533C431CBFE68900376ADC /* Frameworks */,
 				F5533C441CBFE68900376ADC /* Resources */,
-				666AF374E99482CB716914ED /* Embed Pods Frameworks */,
-				8FE9B7FBB7BE8A5487A3F741 /* Copy Pods Resources */,
+				04CA28270FAF7969C4A4E6F6 /* [CP] Embed Pods Frameworks */,
+				58DE6B05F2272C1DFEAA5B39 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,6 +129,8 @@
 				TargetAttributes = {
 					F5533C451CBFE68900376ADC = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = D4MTBNMTU5;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -161,14 +166,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		666AF374E99482CB716914ED /* Embed Pods Frameworks */ = {
+		04CA28270FAF7969C4A4E6F6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,14 +181,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AddPhotoFromCameraRoll/Pods-AddPhotoFromCameraRoll-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8FE9B7FBB7BE8A5487A3F741 /* Copy Pods Resources */ = {
+		58DE6B05F2272C1DFEAA5B39 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,19 +196,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AddPhotoFromCameraRoll/Pods-AddPhotoFromCameraRoll-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A1B07938DF3D5AD9F2EBFA65 /* Check Pods Manifest.lock */ = {
+		7343F57ACF8F78D5E9DEA4D5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -215,6 +220,7 @@
 			files = (
 				F59011711CC14AF40019D4D2 /* UIImagePickerController+RxCreate.swift in Sources */,
 				F5533C4C1CBFE68900376ADC /* ViewController.swift in Sources */,
+				8036672B1F00A85600D2BFC8 /* UIImagePickerController+Rx.swift in Sources */,
 				F5533C4A1CBFE68900376ADC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,25 +334,29 @@
 		};
 		F5533C591CBFE68900376ADC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDDE50126D09A91F675B19D9 /* Pods-AddPhotoFromCameraRoll.debug.xcconfig */;
+			baseConfigurationReference = 72B6D4ECEA6B85576BA89626 /* Pods-AddPhotoFromCameraRoll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D4MTBNMTU5;
 				INFOPLIST_FILE = AddPhotoFromCameraRoll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edison.AddPhotoFromCameraRoll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		F5533C5A1CBFE68900376ADC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F40F3D8C77BC41778762D9F1 /* Pods-AddPhotoFromCameraRoll.release.xcconfig */;
+			baseConfigurationReference = B97554E426F443821D821505 /* Pods-AddPhotoFromCameraRoll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D4MTBNMTU5;
 				INFOPLIST_FILE = AddPhotoFromCameraRoll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edison.AddPhotoFromCameraRoll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

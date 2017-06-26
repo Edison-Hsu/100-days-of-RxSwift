@@ -1,70 +1,70 @@
 //
 //  UISearchController+Rx.swift
-//  Rx
+//  RxCocoa
 //
 //  Created by Segii Shulga on 3/17/16.
 //  Copyright © 2016 Krunoslav Zaher. All rights reserved.
 //
 
-import Foundation
-
 #if os(iOS)
-    import Foundation
     
 #if !RX_NO_MODULE
     import RxSwift
 #endif
     import UIKit
-    
-extension UISearchController {
-    /**
-     Reactive wrapper for `delegate`.
-     For more information take a look at `DelegateProxyType` protocol documentation.
-     */
-    public var rx_delegate: DelegateProxy {
-        return proxyForObject(RxSearchControllerDelegateProxy.self, self)
-    }
-    /**
-     Reactive wrapper for `delegate` message.
-     */
-    public var rx_didDismiss: Observable<Void> {
-        return rx_delegate
-            .observe(#selector(UISearchControllerDelegate.didDismissSearchController(_:)))
-            .map {_ in}
-    }
-    /**
-     Reactive wrapper for `delegate` message.
-     */
-    public var rx_didPresent: Observable<Void> {
-        return rx_delegate
-            .observe(#selector(UISearchControllerDelegate.didPresentSearchController(_:)))
-            .map {_ in}
-    }
-    /**
-     Reactive wrapper for `delegate` message.
-     */
-    public var rx_present: Observable<Void> {
-        return rx_delegate
-            .observe(#selector(UISearchControllerDelegate.presentSearchController(_:)))
-            .map {_ in}
-    }
-    /**
-     Reactive wrapper for `delegate` message.
-     */
-    public var rx_willDismiss: Observable<Void> {
-        return rx_delegate
-            .observe(#selector(UISearchControllerDelegate.willDismissSearchController(_:)))
-            .map {_ in}
-    }
-    /**
-     Reactive wrapper for `delegate` message.
-     */
-    public var rx_willPresent: Observable<Void> {
-        return rx_delegate
-            .observe(#selector(UISearchControllerDelegate.willPresentSearchController(_:)))
-            .map {_ in}
+
+    extension UISearchController {
+        /// Factory method that enables subclasses to implement their own `delegate`.
+        ///
+        /// - returns: Instance of delegate proxy that wraps `delegate`.
+        public func createRxDelegateProxy() -> RxSearchControllerDelegateProxy {
+            return RxSearchControllerDelegateProxy(parentObject: self)
+        }
     }
     
-}
+    @available(iOS 8.0, *)
+    extension Reactive where Base: UISearchController {
+        /// Reactive wrapper for `delegate`.
+        /// For more information take a look at `DelegateProxyType` protocol documentation.
+        public var delegate: DelegateProxy {
+            return RxSearchControllerDelegateProxy.proxyForObject(base)
+        }
+
+        /// Reactive wrapper for `delegate` message.
+        public var didDismiss: Observable<Void> {
+            return delegate
+                .methodInvoked( #selector(UISearchControllerDelegate.didDismissSearchController(_:)))
+                .map {_ in}
+        }
+
+        /// Reactive wrapper for `delegate` message.
+        public var didPresent: Observable<Void> {
+            return delegate
+                .methodInvoked(#selector(UISearchControllerDelegate.didPresentSearchController(_:)))
+                .map {_ in}
+        }
+
+        /// Reactive wrapper for `delegate` message.
+        public var present: Observable<Void> {
+            return delegate
+                .methodInvoked( #selector(UISearchControllerDelegate.presentSearchController(_:)))
+                .map {_ in}
+        }
+
+        /// Reactive wrapper for `delegate` message.
+        public var willDismiss: Observable<Void> {
+            return delegate
+                .methodInvoked(#selector(UISearchControllerDelegate.willDismissSearchController(_:)))
+                .map {_ in}
+        }
+        
+        /// Reactive wrapper for `delegate` message.
+        public var willPresent: Observable<Void> {
+            return delegate
+                .methodInvoked( #selector(UISearchControllerDelegate.willPresentSearchController(_:)))
+                .map {_ in}
+        }
+        
+    }
     
 #endif

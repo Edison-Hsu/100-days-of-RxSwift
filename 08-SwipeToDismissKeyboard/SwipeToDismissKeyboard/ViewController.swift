@@ -13,7 +13,7 @@ import RxCocoa
 class ViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
-    private let disposeBag = DisposeBag()
+    fileprivate let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +21,17 @@ class ViewController: UIViewController {
         textView.becomeFirstResponder()
         
         let gesture = UISwipeGestureRecognizer()
-        gesture.direction = UISwipeGestureRecognizerDirection.Down
+        gesture.direction = UISwipeGestureRecognizerDirection.down
         
-        gesture.rx_event
-            .subscribeNext { [weak self] _ in
-                self?.view.endEditing(true)
-        }.addDisposableTo(disposeBag)
+        _ = gesture.rx.event.subscribe({
+            [weak self] _ in
+            guard let this = self else {
+                return
+            }
+            this.view.endEditing(true)
+        })
         
-        self.view.addGestureRecognizer(gesture)
+        view.addGestureRecognizer(gesture)
     }
 
     override func didReceiveMemoryWarning() {

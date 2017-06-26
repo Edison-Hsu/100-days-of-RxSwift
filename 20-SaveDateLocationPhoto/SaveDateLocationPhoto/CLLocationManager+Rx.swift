@@ -1,11 +1,10 @@
 //
 //  CLLocationManager+Rx.swift
-//  RxCocoa
+//  RxExample
 //
 //  Created by Carlos García on 8/7/15.
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
-
 import CoreLocation
 #if !RX_NO_MODULE
     import RxSwift
@@ -23,35 +22,28 @@ extension Reactive where Base: CLLocationManager {
     }
     
     // MARK: Responding to Location Events
-    
     /**
      Reactive wrapper for `delegate` message.
      */
     public var didUpdateLocations: Observable<[CLLocation]> {
-        return delegate.methodInvoked(#selector(CLLocationManagerDelegate.locationManager(_:didUpdateLocations:)))
-            .map { a in
-                return try castOrThrow([CLLocation].self, a[1])
-        }
+        return (delegate as! RxCLLocationManagerDelegateProxy).didUpdateLocationsSubject.asObservable()
     }
     
     /**
      Reactive wrapper for `delegate` message.
      */
-    public var didFailWithError: Observable<NSError> {
-        return delegate.methodInvoked(#selector(CLLocationManagerDelegate.locationManager(_:didFailWithError:)))
-            .map { a in
-                return try castOrThrow(NSError.self, a[1])
-        }
+    public var didFailWithError: Observable<Error> {
+        return (delegate as! RxCLLocationManagerDelegateProxy).didFailWithErrorSubject.asObservable()
     }
     
-    #if os(iOS) || os(OSX)
+    #if os(iOS) || os(macOS)
     /**
      Reactive wrapper for `delegate` message.
      */
-    public var didFinishDeferredUpdatesWithError: Observable<NSError?> {
+    public var didFinishDeferredUpdatesWithError: Observable<Error?> {
         return delegate.methodInvoked(#selector(CLLocationManagerDelegate.locationManager(_:didFinishDeferredUpdatesWithError:)))
             .map { a in
-                return try castOptionalOrThrow(NSError.self, a[1])
+                return try castOptionalOrThrow(Error.self, a[1])
         }
     }
     #endif
@@ -59,7 +51,6 @@ extension Reactive where Base: CLLocationManager {
     #if os(iOS)
     
     // MARK: Pausing Location Updates
-    
     /**
      Reactive wrapper for `delegate` message.
      */
@@ -81,7 +72,6 @@ extension Reactive where Base: CLLocationManager {
     }
     
     // MARK: Responding to Heading Events
-    
     /**
      Reactive wrapper for `delegate` message.
      */
@@ -93,7 +83,6 @@ extension Reactive where Base: CLLocationManager {
     }
     
     // MARK: Responding to Region Events
-    
     /**
      Reactive wrapper for `delegate` message.
      */
@@ -116,7 +105,7 @@ extension Reactive where Base: CLLocationManager {
     
     #endif
     
-    #if os(iOS) || os(OSX)
+    #if os(iOS) || os(macOS)
     
     /**
      Reactive wrapper for `delegate` message.
@@ -135,11 +124,11 @@ extension Reactive where Base: CLLocationManager {
     /**
      Reactive wrapper for `delegate` message.
      */
-    public var monitoringDidFailForRegionWithError: Observable<(region: CLRegion?, error: NSError)> {
+    public var monitoringDidFailForRegionWithError: Observable<(region: CLRegion?, error: Error)> {
         return delegate.methodInvoked(#selector(CLLocationManagerDelegate.locationManager(_:monitoringDidFailFor:withError:)))
             .map { a in
                 let region = try castOptionalOrThrow(CLRegion.self, a[1])
-                let error = try castOrThrow(NSError.self, a[2])
+                let error = try castOrThrow(Error.self, a[2])
                 return (region: region, error: error)
         }
     }
@@ -159,7 +148,6 @@ extension Reactive where Base: CLLocationManager {
     #if os(iOS)
     
     // MARK: Responding to Ranging Events
-    
     /**
      Reactive wrapper for `delegate` message.
      */
@@ -175,17 +163,16 @@ extension Reactive where Base: CLLocationManager {
     /**
      Reactive wrapper for `delegate` message.
      */
-    public var rangingBeaconsDidFailForRegionWithError: Observable<(region: CLBeaconRegion, error: NSError)> {
+    public var rangingBeaconsDidFailForRegionWithError: Observable<(region: CLBeaconRegion, error: Error)> {
         return delegate.methodInvoked(#selector(CLLocationManagerDelegate.locationManager(_:rangingBeaconsDidFailFor:withError:)))
             .map { a in
                 let region = try castOrThrow(CLBeaconRegion.self, a[1])
-                let error = try castOrThrow(NSError.self, a[2])
+                let error = try castOrThrow(Error.self, a[2])
                 return (region: region, error: error)
         }
     }
     
     // MARK: Responding to Visit Events
-    
     /**
      Reactive wrapper for `delegate` message.
      */
@@ -200,7 +187,6 @@ extension Reactive where Base: CLLocationManager {
     #endif
     
     // MARK: Responding to Authorization Changes
-    
     /**
      Reactive wrapper for `delegate` message.
      */
@@ -211,9 +197,6 @@ extension Reactive where Base: CLLocationManager {
                 return CLAuthorizationStatus(rawValue: Int32(number.intValue)) ?? .notDetermined
         }
     }
-    
-    
-    
 }
 
 

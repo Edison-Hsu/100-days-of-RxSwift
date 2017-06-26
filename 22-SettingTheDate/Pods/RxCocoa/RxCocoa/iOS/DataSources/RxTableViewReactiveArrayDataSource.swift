@@ -8,7 +8,6 @@
 
 #if os(iOS) || os(tvOS)
 
-import Foundation
 import UIKit
 #if !RX_NO_MODULE
 import RxSwift
@@ -70,7 +69,7 @@ class RxTableViewReactiveArrayDataSource<Element>
         return itemModels?[index]
     }
 
-    func model(_ indexPath: IndexPath) throws -> Any {
+    func model(at indexPath: IndexPath) throws -> Any {
         precondition(indexPath.section == 0)
         guard let item = itemModels?[indexPath.item] else {
             throw RxCocoaError.itemsNotYetBound(object: self)

@@ -15,30 +15,41 @@ class ViewController: UIViewController {
     @IBOutlet weak var barButtonItem: UIBarButtonItem!
     @IBOutlet weak var textView: UITextView!
     
-    private let disposeBag = DisposeBag()
+    fileprivate let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        barButtonItem.rx_tap
+        barButtonItem.rx.tap
             .flatMapLatest { [weak self] _ in
-                return UIImagePickerController.rx_createWithParent(self) { picker in
-                    picker.sourceType = .PhotoLibrary
+                return UIImagePickerController.rx.createWithParent(self) { picker in
+                    picker.sourceType = .photoLibrary
                     picker.allowsEditing = false
-                }.flatMap {
-                    $0.rx_didFinishPickingMediaWithInfo
-                }
-                .take(1)
-            }
-            .map { info in
+                    }
+                    .flatMap {
+                        $0.rx.didFinishPickingMediaWithInfo
+                    }
+                    .take(1)
+            }.map({
+                info in
                 return info[UIImagePickerControllerOriginalImage] as? UIImage
-            }.subscribeNext { [weak self] image in
+            }).subscribe(onNext: { [weak self] (image) in
+                guard let this = self else {
+                    return
+                }
+                guard let image = image else {
+                    return
+                }
                 let textAttachment = NSTextAttachment()
-                let scaleFactor = (image?.size.width)! / (self!.textView.frame.size.width - 10);
-                textAttachment.image = UIImage(CGImage: image!.CGImage!, scale: scaleFactor, orientation: .Up)
+                let scaleFactor = image.size.width / (this.textView.frame.size.width - 10);
+                guard let cgImage = image.cgImage else {
+                    return
+                }
+                textAttachment.image = UIImage(cgImage: cgImage, scale: scaleFactor, orientation: .up)
                 let attString = NSAttributedString(attachment: textAttachment)
-                self!.textView.textStorage.insertAttributedString(attString, atIndex: self!.textView.selectedRange.location)
-            }.addDisposableTo(disposeBag)
+                this.textView.textStorage.insert(attString, at: this.textView.selectedRange.location)
+            })
+        .addDisposableTo(disposeBag)
         
     }
 

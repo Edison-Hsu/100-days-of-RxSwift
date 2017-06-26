@@ -18,7 +18,7 @@ class ViewController: UIViewController,ADBannerViewDelegate {
 //        bannerView = ADBannerView(adType: .Banner)
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.delegate = self
-        bannerView.hidden = true
+        bannerView.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,12 +27,12 @@ class ViewController: UIViewController,ADBannerViewDelegate {
     }
 
 
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        bannerView.hidden = false
+    func bannerViewDidLoadAd(_ banner: ADBannerView!) {
+        bannerView.isHidden = false
     }
     
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        bannerView.hidden = true
+    func bannerView(_ banner: ADBannerView!, didFailToReceiveAdWithError error: Error!) {
+        bannerView.isHidden = true
     }
 }
 

@@ -13,12 +13,12 @@ import RxCocoa
 class ViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
-    private let disposeBag = DisposeBag()
+    fileprivate let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
         
         let items = Variable([
             "Mike",
@@ -26,34 +26,28 @@ class ViewController: UIViewController {
             "Ham",
             "Eggs"
         ])
-        
-        
-        items
-            .asObservable()
-            .bindTo(tableview.rx_itemsWithCellIdentifier("Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
+
+        items.asObservable()
+            .bind(to: tableview.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self), curriedArgument: { (row, element, cell) in
                 cell.textLabel?.text = element
-            }
-            .addDisposableTo(disposeBag)
+            }).addDisposableTo(disposeBag)
         
-        tableview
-            .rx_itemDeleted
-            .subscribeNext { indexPath in
-                items.value.removeAtIndex(indexPath.row)
-            }
-            .addDisposableTo(disposeBag)
+        tableview.rx.itemDeleted.subscribe(onNext: {
+            indexPath in
+            items.value.remove(at: indexPath.row)
+        }).addDisposableTo(disposeBag)
         
-        tableview
-            .rx_itemMoved
-            .subscribeNext { fromIndexPath, toIndexPath in
-                let ele = items.value.removeAtIndex(fromIndexPath.row)
-                items.value.insert(ele, atIndex: toIndexPath.row)
-            }
-            .addDisposableTo(disposeBag)
+        tableview.rx.itemMoved.subscribe(onNext: {
+            fromIndexPath, toIndexPath in
+            let ele = items.value.remove(at: fromIndexPath.row)
+            items.value.insert(ele, at: toIndexPath.row)
+        }).addDisposableTo(disposeBag)
+        
     }
     
-    override func setEditing(editing: Bool, animated: Bool) {
+    override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
-        tableview.editing = editing
+        tableview.isEditing = editing
     }
 
     override func didReceiveMemoryWarning() {

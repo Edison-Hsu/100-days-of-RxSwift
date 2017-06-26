@@ -6,7 +6,6 @@
 //  Copyright © 2016 Krunoslav Zaher. All rights reserved.
 //
 
-import Foundation
 import UIKit
 #if !RX_NO_MODULE
     import RxSwift
@@ -38,7 +37,7 @@ extension Reactive where Base: UIImagePickerController {
                         return
                     }
                     dismissViewController(imagePicker, animated: animated)
-                    })
+                })
             
             do {
                 try configureImagePicker(imagePicker)

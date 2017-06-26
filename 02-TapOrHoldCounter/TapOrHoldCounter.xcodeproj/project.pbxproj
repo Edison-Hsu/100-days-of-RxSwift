@@ -123,7 +123,7 @@
 				TargetAttributes = {
 					F5370B071CAAEECF00784F69 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = G2CX929964;
+						DevelopmentTeam = D4MTBNMTU5;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -187,7 +187,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D56903379B2B30994BD29471 /* [CP] Embed Pods Frameworks */ = {
@@ -329,6 +329,7 @@
 			baseConfigurationReference = 5240CBC217997E24A085960B /* Pods-TapOrHoldCounter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D4MTBNMTU5;
 				INFOPLIST_FILE = TapOrHoldCounter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edison.TapOrHoldCounter;
@@ -342,6 +343,7 @@
 			baseConfigurationReference = 909FA1D21A853292396C8E86 /* Pods-TapOrHoldCounter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D4MTBNMTU5;
 				INFOPLIST_FILE = TapOrHoldCounter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edison.TapOrHoldCounter;

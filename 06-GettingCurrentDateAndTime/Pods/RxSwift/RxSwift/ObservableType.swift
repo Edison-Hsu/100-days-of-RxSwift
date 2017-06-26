@@ -6,15 +6,9 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-import Foundation
-
-/**
-Represents a push style sequence.
-*/
+/// Represents a push style sequence.
 public protocol ObservableType : ObservableConvertibleType {
-    /**
-    Type of elements in sequence.
-    */
+    /// Type of elements in sequence.
     associatedtype E
     
     /**
@@ -35,23 +29,22 @@ public protocol ObservableType : ObservableConvertibleType {
     When sequence sends `Complete` or `Error` event all internal resources that compute sequence elements
     will be freed.
     
-    To cancel production of sequence elements and free resources immediatelly, call `dispose` on returned
+    To cancel production of sequence elements and free resources immediately, call `dispose` on returned
     subscription.
     
     - returns: Subscription for `observer` that can be used to cancel production of sequence elements and free resources.
     */
-    @warn_unused_result(message="http://git.io/rxs.ud")
-    func subscribe<O: ObserverType where O.E == E>(observer: O) -> Disposable
-   
+    func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == E
 }
 
 extension ObservableType {
     
-    /**
-    Default implementation of converting `ObservableType` to `Observable`.
-    */
-    @warn_unused_result(message="http://git.io/rxs.uo")
+    /// Default implementation of converting `ObservableType` to `Observable`.
     public func asObservable() -> Observable<E> {
-        return Observable.create(self.subscribe)
+        // temporary workaround
+        //return Observable.create(subscribe: self.subscribe)
+        return Observable.create { o in
+            return self.subscribe(o)
+        }
     }
 }

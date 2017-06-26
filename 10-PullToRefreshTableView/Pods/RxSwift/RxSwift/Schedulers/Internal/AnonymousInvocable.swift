@@ -1,17 +1,15 @@
 //
 //  AnonymousInvocable.swift
-//  Rx
+//  RxSwift
 //
 //  Created by Krunoslav Zaher on 11/7/15.
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-import Foundation
-
 struct AnonymousInvocable : InvocableType {
     private let _action: () -> ()
 
-    init(_ action: () -> ()) {
+    init(_ action: @escaping () -> ()) {
         _action = action
     }
 

@@ -24,7 +24,6 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         
         name.text = _name
         avatar.image = UIImage(named: _avatar)
@@ -34,7 +33,7 @@ class DetailsViewController: UIViewController {
         email.text = _email
         note.text = _note
         
-        note.lineBreakMode = .ByWordWrapping // or NSLineBreakMode.ByWordWrapping
+        note.lineBreakMode = .byWordWrapping // or NSLineBreakMode.ByWordWrapping
         note.numberOfLines = 0
 
         // Do any additional setup after loading the view.

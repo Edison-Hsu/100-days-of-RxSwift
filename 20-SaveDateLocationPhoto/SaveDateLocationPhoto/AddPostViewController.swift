@@ -131,7 +131,7 @@ class AddPostViewController: UIViewController {
             .map { info in
                 return info[UIImagePickerControllerEditedImage] as? UIImage
             }
-            .bindTo(imageView.rx.image)
+            .bind(to: imageView.rx.image)
             .addDisposableTo(disposeBag)
         
         geolocationService.authorized
@@ -143,17 +143,17 @@ class AddPostViewController: UIViewController {
             .addDisposableTo(disposeBag)
         
         locationButton.rx.tap
-            .bindNext { [weak self] in
+            .bind { [weak self] in
                 self?.geolocationService.updateLocation()
             }.addDisposableTo(disposeBag)
         
         cancelButton.rx.tap
-            .bindNext { [weak self] in
+            .bind { [weak self] in
                 _ = self?.navigationController?.popViewController(animated: true)
             }.addDisposableTo(disposeBag)
         
         doneButton.rx.tap
-            .bindNext { [weak self] in
+            .bind { [weak self] in
                 let currentDateTime = Date()
                 let formatter = DateFormatter()
                 formatter.timeStyle = .medium

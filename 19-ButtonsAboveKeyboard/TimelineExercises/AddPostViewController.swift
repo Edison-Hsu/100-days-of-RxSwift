@@ -13,9 +13,9 @@ class AddPostViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
     lazy var toolbar: UIToolbar = {
-       var bar = UIToolbar(frame: CGRectMake(0,0,self.view.frame.width, 44))
-        bar.tintColor = UIColor.whiteColor()
-        bar.translucent = false
+       var bar = UIToolbar(frame: CGRect(x: 0,y: 0,width: self.view.frame.width, height: 44))
+        bar.tintColor = UIColor.white
+        bar.isTranslucent = false
         bar.clipsToBounds = true
         bar.items = [self.cameraButton, self.locationButton]
         return bar
@@ -23,14 +23,14 @@ class AddPostViewController: UIViewController {
     
     let cameraButton: UIBarButtonItem = {
         let btn = UIBarButtonItem()
-        btn.image = UIImage(named: "camera")!.imageWithRenderingMode(.AlwaysOriginal)
+        btn.image = UIImage(named: "camera")!.withRenderingMode(.alwaysOriginal)
         btn.tintColor = UIColor.init(colorLiteralRed: 239/255, green: 249/255, blue: 246/255, alpha: 1.0)
         return btn
     }()
     
     let locationButton: UIBarButtonItem = {
         let btn = UIBarButtonItem()
-        btn.image = UIImage(named: "location")!.imageWithRenderingMode(.AlwaysOriginal)
+        btn.image = UIImage(named: "location")!.withRenderingMode(.alwaysOriginal)
 //        btn.tintColor = UIColor.init(colorLiteralRed: 239/255, green: 249/255, blue: 246/255, alpha: 1.0)
         return btn
     }()

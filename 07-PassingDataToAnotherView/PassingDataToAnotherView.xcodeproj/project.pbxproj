@@ -99,6 +99,8 @@
 				TargetAttributes = {
 					F5533C071CB9508E00376ADC = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = D4MTBNMTU5;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -255,10 +257,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D4MTBNMTU5;
 				INFOPLIST_FILE = PassingDataToAnotherView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edison.PassingDataToAnotherView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -266,10 +270,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D4MTBNMTU5;
 				INFOPLIST_FILE = PassingDataToAnotherView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edison.PassingDataToAnotherView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

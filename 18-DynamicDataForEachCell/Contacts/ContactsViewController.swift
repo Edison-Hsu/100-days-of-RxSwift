@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class ContactsViewController: UIViewController {
 
@@ -50,30 +51,29 @@ class ContactsViewController: UIViewController {
 
         
         let dataSource = setupDataSource()
-        self.edgesForExtendedLayout = UIRectEdge.None
+        self.edgesForExtendedLayout = UIRectEdge()
         
-        
-        items
-            .bindTo(tableView.rx_itemsWithDataSource(dataSource))
+        items.bind(to: tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
         
-        tableView
-            .rx_itemSelected
-            .subscribeNext { [weak self] indexPath in
-                let sb = UIStoryboard(name: "Main" ,bundle: nil)
-                let vc = sb.instantiateViewControllerWithIdentifier("DetailsViewController") as! DetailsViewController
-                let item = self!.dataSource.itemAtIndexPath(indexPath)
-                vc._name = item["name"]!
-                vc._avatar = item["avatar"]!
-                vc._note = item["notes"]!
-                vc._email = item["email"]!
-                vc._mobile = item["mobile"]!
-                
-                self?.navigationController?.pushViewController(vc, animated: true)
-            }.addDisposableTo(disposeBag)
+        tableView.rx.itemSelected.subscribe(onNext: {
+            [weak self] indexPath in
+            guard let this = self else {
+                return
+            }
+            let sb = UIStoryboard(name: "Main" ,bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+            let item = this.dataSource[indexPath]
+            vc._name = item["name"]!
+            vc._avatar = item["avatar"]!
+            vc._note = item["notes"]!
+            vc._email = item["email"]!
+            vc._mobile = item["mobile"]!
+            
+            this.navigationController?.pushViewController(vc, animated: true)
+        }).addDisposableTo(disposeBag)
         
-        
-        tableView.rx_setDelegate(self)
+        _ = tableView.rx.setDelegate(self)
         
     }
 
@@ -84,15 +84,15 @@ class ContactsViewController: UIViewController {
 
     func setupDataSource() -> RxTableViewSectionedReloadDataSource<SectionModel<String, [String:String]>> {
         dataSource.configureCell = { (_, tv, indexPath, element) in
-            let cell = tv.dequeueReusableCellWithIdentifier("Content")!
+            let cell = tv.dequeueReusableCell(withIdentifier: "Content")!
             cell.textLabel?.text = element["name"]
             
             let image = UIImage(named: element["avatar"]!)
-            let imageSize = CGSizeMake(36, 36)
+            let imageSize = CGSize(width: 36, height: 36)
             
             UIGraphicsBeginImageContextWithOptions(imageSize, false, 0.0)
-            let imageRect = CGRectMake(0, 0, imageSize.width, imageSize.height)
-            image?.drawInRect(imageRect)
+            let imageRect = CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height)
+            image?.draw(in: imageRect)
             
         
             cell.imageView?.layer.cornerRadius = 18
@@ -108,12 +108,12 @@ class ContactsViewController: UIViewController {
         return dataSource
     }
     
-    func loadDict(fileName: String) -> [NSDictionary]? {
-        if let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "json") {
+    func loadDict(_ fileName: String) -> [NSDictionary]? {
+        if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
             do {
-                let jsonData = try NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe)
+                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 do {
-                    let jsonResult: [NSDictionary] = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! [NSDictionary]
+                    let jsonResult: [NSDictionary] = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as! [NSDictionary]
                     return jsonResult
                     
                 } catch let error as NSError {
@@ -135,19 +135,19 @@ class ContactsViewController: UIViewController {
 
 extension ContactsViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
 
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Header")
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Header")
         let greenColour = UIColor(red: 139/255, green: 87/255, blue: 42/255, alpha: 1)
         let attributedColour = [NSForegroundColorAttributeName : greenColour];
-        let attributedString = NSAttributedString(string: dataSource.sectionAtIndex(section).model, attributes: attributedColour)
+        let attributedString = NSAttributedString(string: dataSource[section].model, attributes: attributedColour)
         cell!.textLabel?.attributedText = attributedString
         return cell
     }

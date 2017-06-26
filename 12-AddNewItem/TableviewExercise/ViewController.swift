@@ -26,37 +26,28 @@ class ViewController: UIViewController, DataEnteredDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
         
- 
+        items.asObservable().bind(to: tableview.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self), curriedArgument: { (row, element, cell) in
+            cell.textLabel?.text = element
+        }).addDisposableTo(disposeBag)
         
+        tableview.rx.itemDeleted.subscribe(onNext: {
+            indexPath in
+            self.items.value.remove(at: indexPath.row)
+        }).addDisposableTo(disposeBag)
         
-        items
-            .asObservable()
-            .bindTo(tableview.rx_itemsWithCellIdentifier("Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
-                cell.textLabel?.text = element
-            }
-            .addDisposableTo(disposeBag)
+        tableview.rx.itemMoved.subscribe(onNext: {
+             fromIndexPath, toIndexPath in
+            let ele = self.items.value.remove(at: fromIndexPath.row)
+            self.items.value.insert(ele, at: toIndexPath.row)
+        }).addDisposableTo(disposeBag)
         
-        tableview
-            .rx_itemDeleted
-            .subscribeNext { indexPath in
-                self.items.value.removeAtIndex(indexPath.row)
-            }
-            .addDisposableTo(disposeBag)
-        
-        tableview
-            .rx_itemMoved
-            .subscribeNext { fromIndexPath, toIndexPath in
-                let ele = self.items.value.removeAtIndex(fromIndexPath.row)
-                self.items.value.insert(ele, atIndex: toIndexPath.row)
-            }
-            .addDisposableTo(disposeBag)
     }
     
-    override func setEditing(editing: Bool, animated: Bool) {
+    override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
-        tableview.editing = editing
+        tableview.isEditing = editing
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,12 +55,12 @@ class ViewController: UIViewController, DataEnteredDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let secondViewController = segue.destinationViewController as! SecondViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let secondViewController = segue.destination as! SecondViewController
         secondViewController.delegate = self
     }
     
-    func userDidEnterInformation(info: String) {
+    func userDidEnterInformation(_ info: String) {
         items.value.append(info)
     }
 

@@ -2,7 +2,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'TimelineExercises' do
-  pod 'RxSwift'
-  pod 'RxCocoa'
+  pod 'RxSwift',    '~> 3.5.0'
+  pod 'RxCocoa',    '~> 3.5.0'
 end
 

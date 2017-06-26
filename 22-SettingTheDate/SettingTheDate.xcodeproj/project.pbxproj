@@ -123,6 +123,7 @@
 				TargetAttributes = {
 					F5F735A41DD4CB70008DD5CC = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = D4MTBNMTU5;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -336,6 +337,7 @@
 			baseConfigurationReference = 4E85FB5E28483FD4CFB40461 /* Pods-SettingTheDate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D4MTBNMTU5;
 				INFOPLIST_FILE = SettingTheDate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edison.SettingTheDate;
@@ -349,6 +351,7 @@
 			baseConfigurationReference = 89817076A92B1B2BFBD62665 /* Pods-SettingTheDate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D4MTBNMTU5;
 				INFOPLIST_FILE = SettingTheDate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edison.SettingTheDate;
@@ -376,6 +379,7 @@
 				F5F735B91DD4CB71008DD5CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

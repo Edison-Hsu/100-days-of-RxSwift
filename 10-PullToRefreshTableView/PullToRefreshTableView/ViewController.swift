@@ -13,8 +13,8 @@ import RxCocoa
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    private let disposeBag = DisposeBag()
-    private let refreshControl = UIRefreshControl()
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,21 +38,21 @@ class ViewController: UIViewController {
             "Water"
             ]
         
-        items
-            .asObservable()
-            .bindTo(tableView.rx_itemsWithCellIdentifier("Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
-                cell.textLabel?.text = element
-            }
-            .addDisposableTo(disposeBag)
         
-        refreshControl.rx_controlEvent(.ValueChanged)
-            .subscribeNext { _ in
+        items.asObservable()
+            .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self), curriedArgument: { (row, element, cell) in
+                cell.textLabel?.text = element
+            }).addDisposableTo(disposeBag)
+        
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: {
+                _ in
                 items.value = items2
                 self.refreshControl.endRefreshing()
-                
-            }.addDisposableTo(disposeBag)
+            }).addDisposableTo(disposeBag)
         
         tableView.addSubview(refreshControl)
+        
     }
 
     override func didReceiveMemoryWarning() {

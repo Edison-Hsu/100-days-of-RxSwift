@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         dateFormatter.dateFormat = "MMM dd, yyyy"
         
         button.rx.tap
-            .bindNext { [weak self] in
+            .bind { [weak self] in
                 let selectedDate = dateFormatter.string(from: (self?.datePicker.date)!)
                 self?.title = selectedDate
             }.addDisposableTo(disposeBag)

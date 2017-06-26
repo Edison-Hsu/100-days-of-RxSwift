@@ -4,9 +4,9 @@
 use_frameworks!
 
 target 'TapCounter' do
-  pod 'RxSwift',    '~> 2.0'
-  pod 'RxCocoa',    '~> 2.0'
-  pod 'RxBlocking', '~> 2.0'
+  pod 'RxSwift',    '~> 3.5.0'
+  pod 'RxCocoa',    '~> 3.5.0'
+  pod 'RxBlocking', '~> 3.5.0'
 #  pod 'RxTests',    '~> 2.0'
 end
 

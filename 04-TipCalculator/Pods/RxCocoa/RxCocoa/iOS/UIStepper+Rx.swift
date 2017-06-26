@@ -8,20 +8,17 @@
 
 #if os(iOS)
 
-import Foundation
 import UIKit
 #if !RX_NO_MODULE
 import RxSwift
 #endif
 
-extension UIStepper {
+extension Reactive where Base: UIStepper {
     
-    /**
-    Reactive wrapper for `value` property.
-    */
-    public var rx_value: ControlProperty<Double> {
-        return UIControl.rx_value(
-            self,
+    /// Reactive wrapper for `value` property.
+    public var value: ControlProperty<Double> {
+        return UIControl.rx.value(
+            self.base,
             getter: { stepper in
                 stepper.value
             }, setter: { stepper, value in

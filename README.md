@@ -250,6 +250,4 @@ What I Learned:
 - Custom Navigation item
 
 
-Edison-Hsu/100-days-of-RxSwift
-
-<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=#Edison-Hsu/100-days-of-RxSwift&Date" frameBorder="0"></iframe>
+[![Star History Chart](https://api.star-history.com/svg?repos=Edison-Hsu/100-days-of-RxSwift&type=Date)](https://star-history.com/#Edison-Hsu/100-days-of-RxSwift&Date)
